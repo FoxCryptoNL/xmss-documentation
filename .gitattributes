@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2023 Fox Crypto B.V.
+# SPDX-License-Identifier: CC-BY-4.0
+
+# default: normalize EOL
+* text=auto
+
+# Boilerplate
+.gitattributes   text
+.txt             text
+.nojekyll        text
+
+# Documentation
+*.css    text
+*.html   text
+*.js     text
+*.map    text
+*.md5    text
+*.svg    text
+
+*.png     binary
+*.ttf     binary
+*.woff    binary
+*.woff2   binary
