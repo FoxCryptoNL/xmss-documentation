@@ -1,0 +1,10 @@
+<map id="verification.h" name="verification.h">
+<area shape="rect" id="node1" title="Public API for the XMSS verification library." alt="" coords="133,5,240,32"/>
+<area shape="rect" id="node2" href="$structures_8h.html" title="XMSS library specific structured types." alt="" coords="95,80,193,107"/>
+<area shape="rect" id="node6" href="$types_8h.html" title="Enumerations, basic types and callback function specifications." alt="" coords="179,229,250,256"/>
+<area shape="rect" id="node3" href="$compat_8h.html" title="C99 compatibility layer." alt="" coords="63,304,145,331"/>
+<area shape="rect" id="node5" href="$opaque__structures_8h.html" title="Public definitions of opaque structures and memory management calls for those." alt="" coords="27,155,181,181"/>
+<area shape="rect" id="node4" href="$xmss__config_8h.html" title="The configurable CMake options that affect the public API." alt="" coords="47,379,161,405"/>
+<area shape="rect" id="node7" title=" " alt="" coords="172,304,247,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="271,304,342,331"/>
+</map>

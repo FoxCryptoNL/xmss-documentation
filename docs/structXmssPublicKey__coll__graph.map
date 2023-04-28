@@ -1,0 +1,4 @@
+<map id="XmssPublicKey" name="XmssPublicKey">
+<area shape="rect" id="node1" title="Exportable format for a public key." alt="" coords="5,109,127,136"/>
+<area shape="rect" id="node2" href="$structXmssValue256.html" title="A generic 256&#45;bit value, represented as a byte stream." alt="" coords="7,5,125,32"/>
+</map>

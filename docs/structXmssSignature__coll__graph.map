@@ -1,0 +1,4 @@
+<map id="XmssSignature" name="XmssSignature">
+<area shape="rect" id="node1" title="Exportable format for a signature." alt="" coords="5,124,125,151"/>
+<area shape="rect" id="node2" href="$structXmssValue256.html" title="A generic 256&#45;bit value, represented as a byte stream." alt="" coords="6,5,125,32"/>
+</map>

@@ -1,0 +1,7 @@
+/*
+ * Fixes relative font sizes between Doxygen Awesome, Mermaid, and KaTeX.
+ */
+
+.katex {
+    font-size: 1em;
+}
