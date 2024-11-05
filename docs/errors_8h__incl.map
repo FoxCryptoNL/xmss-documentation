@@ -1,0 +1,8 @@
+<map id="errors.h" name="errors.h">
+<area shape="rect" id="node1" title="Public API for XMSS error handling." alt="" coords="104,5,176,32"/>
+<area shape="rect" id="node2" href="$types_8h.html" title="Enumerations, basic types and callback function specifications." alt="" coords="105,80,175,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,155,175,181"/>
+<area shape="rect" id="node5" href="$compat_8h.html" title="C99 compatibility layer." alt="" coords="200,155,283,181"/>
+<area shape="rect" id="node6" href="$xmss__config_8h.html" title="The configurable CMake options that affect the public API." alt="" coords="184,229,299,256"/>
+</map>

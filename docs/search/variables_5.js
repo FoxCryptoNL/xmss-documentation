@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scheme_5fidentifier_223',['scheme_identifier',['../structXmssPublicKey.html#a0fe28036373323bdde96d4ab9363afb9',1,'XmssPublicKey']]],
-  ['seed_224',['seed',['../structXmssPublicKey.html#adc269b2276f9b69c85f8cdacf3a51bc2',1,'XmssPublicKey']]]
+  ['wots_5fsignature_256',['wots_signature',['../structXmssSignature.html#a55970d57d98bb8bcc4e858abd91dbd03',1,'XmssSignature']]]
 ];

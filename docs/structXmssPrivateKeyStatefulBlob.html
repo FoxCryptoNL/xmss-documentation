@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('structXmssPrivateKeyStatefulBlob.html'
 Public Attributes</h2></td></tr>
 <tr class="memitem:afb7922e71bcc39f1236531fc5f1a6344"><td class="memItemLeft" align="right" valign="top"><a id="afb7922e71bcc39f1236531fc5f1a6344"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPrivateKeyStatefulBlob.html#afb7922e71bcc39f1236531fc5f1a6344">data_size</a></td></tr>
-<tr class="memdesc:afb7922e71bcc39f1236531fc5f1a6344"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size in bytes of the data array. <br /></td></tr>
+<tr class="memdesc:afb7922e71bcc39f1236531fc5f1a6344"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size in bytes of the <code>data</code> array. <br /></td></tr>
 <tr class="separator:afb7922e71bcc39f1236531fc5f1a6344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ede56d6e982f882a862a145df39322e"><td class="memItemLeft" align="right" valign="top"><a id="a2ede56d6e982f882a862a145df39322e"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPrivateKeyStatefulBlob.html#a2ede56d6e982f882a862a145df39322e">data</a> []</td></tr>
@@ -147,8 +147,8 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="s
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A stored stateful private key part. </p>
 <p>Use this structure's contents to store or read a stateful private key part.</p>
-<p>After writing a stateful private key part, it is strongly recommended to read it back and validate the correctness of the read back version using xmss_verify_private_key_stateful.</p>
-<p>When creating an <a class="el" href="structXmssPrivateKeyStatefulBlob.html" title="A stored stateful private key part.">XmssPrivateKeyStatefulBlob</a>, the <a class="el" href="structures_8h.html#a9ab30af14684ea98930f6565f92eb0e4" title="The size in bytes of an XmssPrivateKeyStatefulBlob.">XMSS_PRIVATE_KEY_STATEFUL_BLOB_SIZE()</a> macro can be used to allocate the correct size for the structure and its opaque contents. </p>
+<p>After writing a stateful private key part, it is strongly recommended to read it back and validate the correctness of the read back version using <a class="el" href="signing_8h.html#a179002c8c6eb15e09503e8781d664f0b" title="Verify the validity and integrity of a stateful private key partition part.">xmss_verify_private_key_stateful()</a>.</p>
+<p>When creating an <a class="el" href="structXmssPrivateKeyStatefulBlob.html" title="A stored stateful private key part.">XmssPrivateKeyStatefulBlob</a>, the <a class="el" href="structures_8h.html#a9ab30af14684ea98930f6565f92eb0e4" title="The size in bytes of an XmssPrivateKeyStatefulBlob.">XMSS_PRIVATE_KEY_STATEFUL_BLOB_SIZE</a> macro can be used to allocate the correct size for the structure and its opaque contents. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structures_8h_source.html">structures.h</a></li>
 </ul>

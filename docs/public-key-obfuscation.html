@@ -125,27 +125,27 @@ $(document).ready(function(){initNavTree('public-key-obfuscation.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md8">Problem definition</a></li>
-<li class="level1"><a href="#autotoc_md9">Public key obfuscation</a><ul><li class="level2"><a href="#autotoc_md10">Security impact</a></li>
-<li class="level2"><a href="#autotoc_md11">Storage and message size</a></li>
+<ul><li class="level1"><a href="#autotoc_md13">Problem definition</a></li>
+<li class="level1"><a href="#autotoc_md14">Public key obfuscation</a><ul><li class="level2"><a href="#autotoc_md15">Security impact</a></li>
+<li class="level2"><a href="#autotoc_md16">Storage and message size</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_Ybiz_PBn_0_crypto_xmss_documentation_build_docs_0040_public_key_obfuscation"></a></p>
 <p>This document describes a method to obfuscate the root of trust on a verifying system and briefly discusses the trade offs.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Problem definition</h1>
 <p>An XMSS signature does not include any information about the public key, except for the leaf index used to generate the signature. In the most straight forward usage scenario, the public key is stored or installed in the verifying system according to the guidance in <a class="el" href="public-key-authentication.html">Public key authentication</a>. That does mean that an attacker that has access to the roots of trust of two systems may be able to infer more information from that, such as whether the two systems are integrated in the same infrastructure.</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Public key obfuscation</h1>
 <p>If instead of the public key, a randomized cryptographic hash of the public key is stored along with the random salt, the verifier is still able to verify the signature, provided the public key is also attached to the message along with the signature. The verifier must also verify the authenticity of the public key by hashing it with the random salt, which can be unique to the device. The randomized hash and random salt can be stored in an integrity protected manner, for example by fusing the data into some sort of one-time programmable memory.</p>
 <p>The library does not include the API to implement this, as it's not part of the XMSS scheme.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Security impact</h2>
 <p>Integrity protection techniques for secure storage of a public key can probably also be used to protect the integrity of the randomized public key hash.</p>
 <p>Obfuscating the public key on the verifying system moves the information to the message, which implies that an attacker that intercepts two messages does gain the knowledge that the messages include the same public key. However, since the attacker can already infer that two signatures are from the same key if they have any shared node in the authentication path, this does not provide the attacker much more information.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Storage and message size</h2>
 <p>Since the XMSS public key is small, there is no advantage to using this method in terms of storage. The randomized hash and random salt will add up to roughly the same size as public key itself. As the public key is now to be included in the message, the message size will be increased by 68 bytes. While not entirely negligible, this increase is relatively small in contrast the size of the signature. </p>
 </div></div><!-- contents -->

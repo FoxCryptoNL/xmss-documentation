@@ -155,7 +155,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:af9f5367613b2770d231b263590f05a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include guard. <br /></td></tr>
 <tr class="separator:af9f5367613b2770d231b263590f05a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19005ce7ba72d44afed3bd4440ea1a7a"><td class="memItemLeft" align="right" valign="top"><a id="a19005ce7ba72d44afed3bd4440ea1a7a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a">XMSS_SIGNING_CONTEXT_SIZE</a>&#160;&#160;&#160;(4u + 4u + 4u + 4u + 11u * sizeof(void(*)()))</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a">XMSS_SIGNING_CONTEXT_SIZE</a>&#160;&#160;&#160;(4u + 4u + 4u + 4u + 4u * sizeof(void(*)(void)))</td></tr>
 <tr class="memdesc:a19005ce7ba72d44afed3bd4440ea1a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size in bytes of an XmssSigningContext. <br /></td></tr>
 <tr class="separator:a19005ce7ba72d44afed3bd4440ea1a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a271d02a7f26a7a0a7bc16dce5ce2bd37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="opaque__structures_8h.html#a271d02a7f26a7a0a7bc16dce5ce2bd37">XMSS_CACHE_ENTRY_COUNT</a>(cache_type,  cache_level,  param_set)</td></tr>
@@ -251,13 +251,13 @@ Functions</h2></td></tr>
 <div class="line">            ) \</div>
 <div class="line">        ) \</div>
 <div class="line">    )</div>
-<div class="ttc" id="atypes_8h_html_a34eb0ce7be52f3ee8d1c19a0291ebe2f"><div class="ttname"><a href="types_8h.html#a34eb0ce7be52f3ee8d1c19a0291ebe2f">XMSS_TREE_DEPTH</a></div><div class="ttdeci">#define XMSS_TREE_DEPTH(param_set)</div><div class="ttdoc">The tree depth for a given XMSS parameter set.</div><div class="ttdef"><b>Definition:</b> types.h:189</div></div>
-<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a15409c407d31a0668facde7fd165d4fe"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a15409c407d31a0668facde7fd165d4fe">XMSS_CACHE_NONE</a></div><div class="ttdeci">@ XMSS_CACHE_NONE</div><div class="ttdoc">No caching.</div><div class="ttdef"><b>Definition:</b> types.h:218</div></div>
-<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a570c30f2ba018a3aec046ba3001589bb"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a570c30f2ba018a3aec046ba3001589bb">XMSS_CACHE_SINGLE_LEVEL</a></div><div class="ttdeci">@ XMSS_CACHE_SINGLE_LEVEL</div><div class="ttdoc">Single level caching.</div><div class="ttdef"><b>Definition:</b> types.h:228</div></div>
-<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a8799ab664b5c16f71988ea5d0b6e9c21"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a8799ab664b5c16f71988ea5d0b6e9c21">XMSS_CACHE_TOP</a></div><div class="ttdeci">@ XMSS_CACHE_TOP</div><div class="ttdoc">Top caching.</div><div class="ttdef"><b>Definition:</b> types.h:237</div></div>
+<div class="ttc" id="atypes_8h_html_a34eb0ce7be52f3ee8d1c19a0291ebe2f"><div class="ttname"><a href="types_8h.html#a34eb0ce7be52f3ee8d1c19a0291ebe2f">XMSS_TREE_DEPTH</a></div><div class="ttdeci">#define XMSS_TREE_DEPTH(param_set)</div><div class="ttdoc">The tree depth for a given XMSS parameter set.</div><div class="ttdef"><b>Definition:</b> types.h:214</div></div>
+<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a15409c407d31a0668facde7fd165d4fe"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a15409c407d31a0668facde7fd165d4fe">XMSS_CACHE_NONE</a></div><div class="ttdeci">@ XMSS_CACHE_NONE</div><div class="ttdoc">No caching.</div><div class="ttdef"><b>Definition:</b> types.h:243</div></div>
+<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a570c30f2ba018a3aec046ba3001589bb"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a570c30f2ba018a3aec046ba3001589bb">XMSS_CACHE_SINGLE_LEVEL</a></div><div class="ttdeci">@ XMSS_CACHE_SINGLE_LEVEL</div><div class="ttdoc">Single level caching.</div><div class="ttdef"><b>Definition:</b> types.h:253</div></div>
+<div class="ttc" id="atypes_8h_html_a956fe873140d1fe0acae33aba4f9e1a6a8799ab664b5c16f71988ea5d0b6e9c21"><div class="ttname"><a href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6a8799ab664b5c16f71988ea5d0b6e9c21">XMSS_CACHE_TOP</a></div><div class="ttdeci">@ XMSS_CACHE_TOP</div><div class="ttdoc">Top caching.</div><div class="ttdef"><b>Definition:</b> types.h:262</div></div>
 </div><!-- fragment -->
 <p>The number of cached entries for a specific cache configuration. </p>
-<dl class="section note"><dt>Note</dt><dd>The arguments to XMSS_CACHE_ENTRY_COUNT will be evaluated multiple times.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The arguments to <a class="el" href="opaque__structures_8h.html#a271d02a7f26a7a0a7bc16dce5ce2bd37" title="The number of cached entries for a specific cache configuration.">XMSS_CACHE_ENTRY_COUNT()</a> will be evaluated multiple times.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cache_type</td><td>The cache type that is used. </td></tr>
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information about the cache type and level. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information about the cache type and level. </dd></dl>
 
 </div>
 </div>
@@ -303,7 +303,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The size in bytes of an XmssInternalCache. </p>
-<dl class="section note"><dt>Note</dt><dd>The arguments to XMSS_INTERNAL_CACHE_SIZE will be evaluated multiple times.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The arguments to <a class="el" href="opaque__structures_8h.html#a46066c28d0c02154271c3da082789807" title="The size in bytes of an XmssInternalCache.">XMSS_INTERNAL_CACHE_SIZE()</a> will be evaluated multiple times.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cache_type</td><td>The cache type that is used. </td></tr>
@@ -312,7 +312,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information about the cache type and level. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information about the cache type and level. </dd></dl>
 
 </div>
 </div>
@@ -347,15 +347,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="aopaque__structures_8h_html_a0f17fe9d905a16f22187d0a3fca3c331"><div class="ttname"><a href="opaque__structures_8h.html#a0f17fe9d905a16f22187d0a3fca3c331">XMSS_PRIVATE_KEY_STATELESS_PART_SIZE</a></div><div class="ttdeci">#define XMSS_PRIVATE_KEY_STATELESS_PART_SIZE</div><div class="ttdoc">The size in bytes of the stateless part of a private key.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:141</div></div>
 <div class="ttc" id="aopaque__structures_8h_html_a1748e808fb048954cba3c10ef0564be6"><div class="ttname"><a href="opaque__structures_8h.html#a1748e808fb048954cba3c10ef0564be6">XMSS_PRIVATE_KEY_STATEFUL_PART_SIZE</a></div><div class="ttdeci">#define XMSS_PRIVATE_KEY_STATEFUL_PART_SIZE</div><div class="ttdoc">The size in bytes of the stateful part of a private key.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:132</div></div>
 <div class="ttc" id="aopaque__structures_8h_html_a19005ce7ba72d44afed3bd4440ea1a7a"><div class="ttname"><a href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a">XMSS_SIGNING_CONTEXT_SIZE</a></div><div class="ttdeci">#define XMSS_SIGNING_CONTEXT_SIZE</div><div class="ttdoc">The size in bytes of an XmssSigningContext.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:43</div></div>
-<div class="ttc" id="astructXmssValue256_html"><div class="ttname"><a href="structXmssValue256.html">XmssValue256</a></div><div class="ttdoc">A generic 256-bit value, represented as a byte stream.</div><div class="ttdef"><b>Definition:</b> types.h:254</div></div>
-<div class="ttc" id="atypes_8h_html_adb4dd79f0a19cd8169d8c597591ac42ca5ef297597631c2b2a50ca642165aa0b0"><div class="ttname"><a href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42ca5ef297597631c2b2a50ca642165aa0b0">XMSS_INDEX_OBFUSCATION_ON</a></div><div class="ttdeci">@ XMSS_INDEX_OBFUSCATION_ON</div><div class="ttdoc">Index obfuscation is enabled.</div><div class="ttdef"><b>Definition:</b> types.h:208</div></div>
+<div class="ttc" id="astructXmssValue256_html"><div class="ttname"><a href="structXmssValue256.html">XmssValue256</a></div><div class="ttdoc">A generic 256-bit value, represented as a byte stream.</div><div class="ttdef"><b>Definition:</b> types.h:279</div></div>
+<div class="ttc" id="atypes_8h_html_adb4dd79f0a19cd8169d8c597591ac42ca5ef297597631c2b2a50ca642165aa0b0"><div class="ttname"><a href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42ca5ef297597631c2b2a50ca642165aa0b0">XMSS_INDEX_OBFUSCATION_ON</a></div><div class="ttdeci">@ XMSS_INDEX_OBFUSCATION_ON</div><div class="ttdoc">Index obfuscation is enabled.</div><div class="ttdef"><b>Definition:</b> types.h:233</div></div>
 </div><!-- fragment -->
 <p>The size in bytes of an XmssKeyContext. </p>
-<dl class="section note"><dt>Note</dt><dd>The param_set argument will be evaluated multiple times.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The <code>param_set</code> argument will be evaluated multiple times.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">param_set</td><td>The XmssParameterSetOID that is to be used for the private key. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">obfuscation_setting</td><td>The XmssIndexObfuscationSetting that is to be used with the private key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param_set</td><td>The <a class="el" href="types_8h.html#ae28a452b1a628877fd2fa9eb9502af68" title="The XMSS parameter sets that are supported by this library.">XmssParameterSetOID</a> that is to be used for the private key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obfuscation_setting</td><td>The <a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c" title="The supported settings for index obfuscation.">XmssIndexObfuscationSetting</a> that is to be used with the private key. </td></tr>
   </table>
   </dd>
 </dl>
@@ -387,7 +387,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information about generation_partitions </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information about generation_partitions. </dd></dl>
 
 </div>
 </div>
@@ -465,7 +465,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>In-memory representation of a loaded cache. </p>
-<p>When creating an XmssInternalCache, the XMSS_INTERNAL_CACHE_SIZE macro can be used to allocate the correct size.</p>
+<p>When creating an XmssInternalCache, the <a class="el" href="opaque__structures_8h.html#a46066c28d0c02154271c3da082789807" title="The size in bytes of an XmssInternalCache.">XMSS_INTERNAL_CACHE_SIZE()</a> macro can be used to allocate the correct size.</p>
 <p>XmssInternalCache is an opaque type, do not access its members. </p>
 
 </div>
@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Context for using the signature generation part of the library, with a loaded private key partition. </p>
-<p>When creating an XmssKeyContext, the XMSS_KEY_CONTEXT_SIZE macro can be used to allocate the correct size.</p>
+<p>When creating an XmssKeyContext, the <a class="el" href="opaque__structures_8h.html#a3eda323dd4d18fd5e157fc6290be8480" title="The size in bytes of an XmssKeyContext.">XMSS_KEY_CONTEXT_SIZE</a> macro can be used to allocate the correct size.</p>
 <p>XmssKeyContext is an opaque type, do not access its members. </p>
 
 </div>
@@ -501,7 +501,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The temporary context to gather all the results of generating a public key. </p>
-<p>When creating an XmssKeyGenerationContext, the XMSS_KEY_GENERATION_CONTEXT_SIZE macro may be used to allocate the correct size.</p>
+<p>When creating an XmssKeyGenerationContext, the <a class="el" href="opaque__structures_8h.html#aa15f7f71906c074ca12d556bb72fdf48" title="The size in bytes of XmssKeyGenerationContext.">XMSS_KEY_GENERATION_CONTEXT_SIZE</a> macro may be used to allocate the correct size.</p>
 <p>The elements of an XmssKeyGenerationContext are generally to be considered invalid outside of their specific use in the public key generation process.</p>
 <p>XmssKeyGenerationContext is an opaque type, do not access its members. </p>
 
@@ -521,7 +521,7 @@ Functions</h2></td></tr>
 
 <p>The context of an instantiation of the signing library. </p>
 <p>The signing context defines the parameter set and the hash functions to use.</p>
-<p>When creating an XmssSigningContext, the XMSS_SIGNING_CONTEXT_SIZE macro can be used to allocate the correct size.</p>
+<p>When creating an XmssSigningContext, the <a class="el" href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a" title="The size in bytes of an XmssSigningContext.">XMSS_SIGNING_CONTEXT_SIZE</a> macro can be used to allocate the correct size.</p>
 <p>XmssSigningContext is an opaque type, do not access its members. </p>
 
 </div>

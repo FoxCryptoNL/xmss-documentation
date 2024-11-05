@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('xmss__config_8h.html',''); initResizab
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="xmss__config_8h__dep__incl.svg" width="1327" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="xmss__config_8h__dep__incl.svg" width="1520" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -150,6 +150,18 @@ Macros</h2></td></tr>
 <tr class="memitem:ad1edca72b4957256583b9426087c65e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmss__config_8h.html#ad1edca72b4957256583b9426087c65e8">XMSS_CAN_USE_EXTENSION_STATIC_ASSERT</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:ad1edca72b4957256583b9426087c65e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the compiler supports <code>__extension__ _Static_assert()</code>.  <a href="xmss__config_8h.html#ad1edca72b4957256583b9426087c65e8">More...</a><br /></td></tr>
 <tr class="separator:ad1edca72b4957256583b9426087c65e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188a744461404b842791f98587b4e3e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmss__config_8h.html#a188a744461404b842791f98587b4e3e1">XMSS_ENABLE_SIGNING</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a188a744461404b842791f98587b4e3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the library is built with signing support.  <a href="xmss__config_8h.html#a188a744461404b842791f98587b4e3e1">More...</a><br /></td></tr>
+<tr class="separator:a188a744461404b842791f98587b4e3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab752a151dea1feb9bdc05977207f1d93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmss__config_8h.html#ab752a151dea1feb9bdc05977207f1d93">XMSS_LIBRARY_VERSION_MAJOR</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ab752a151dea1feb9bdc05977207f1d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">The major version of the library headers.  <a href="xmss__config_8h.html#ab752a151dea1feb9bdc05977207f1d93">More...</a><br /></td></tr>
+<tr class="separator:ab752a151dea1feb9bdc05977207f1d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8244611621bd19ed13dd0fa97dd63f91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmss__config_8h.html#a8244611621bd19ed13dd0fa97dd63f91">XMSS_LIBRARY_VERSION_MINOR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a8244611621bd19ed13dd0fa97dd63f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minor version of the library headers.  <a href="xmss__config_8h.html#a8244611621bd19ed13dd0fa97dd63f91">More...</a><br /></td></tr>
+<tr class="separator:a8244611621bd19ed13dd0fa97dd63f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338eca65a7ce63e3924a12a5e769dd19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmss__config_8h.html#a338eca65a7ce63e3924a12a5e769dd19">XMSS_LIBRARY_VERSION_PATCH</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a338eca65a7ce63e3924a12a5e769dd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">The patch version of the library headers.  <a href="xmss__config_8h.html#a338eca65a7ce63e3924a12a5e769dd19">More...</a><br /></td></tr>
+<tr class="separator:a338eca65a7ce63e3924a12a5e769dd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The configurable CMake options that affect the public API. </p>
@@ -169,7 +181,7 @@ Macros</h2></td></tr>
 
 <p>Indicates whether the compiler supports <code>__extension__ _Static_assert()</code>. </p>
 <p>This option is automatically detected by CMake.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="compat_8h.html#a8ce491b27b644889db1ca99d8c99c24e" title="Syntactical equivalent of _Static_assert(), which is C11.">STATIC_ASSERT</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="compat_8h.html#ab7b0a273cdffb714d79fe2581f30f9a2" title="Syntactical equivalent of _Static_assert(), which is C11.">XMSS_STATIC_ASSERT</a> </dd></dl>
 
 </div>
 </div>
@@ -187,7 +199,81 @@ Macros</h2></td></tr>
 
 <p>Indicates whether the compiler supports <code>_Static_assert()</code>. </p>
 <p>This option is automatically detected by CMake.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="compat_8h.html#a8ce491b27b644889db1ca99d8c99c24e" title="Syntactical equivalent of _Static_assert(), which is C11.">STATIC_ASSERT</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="compat_8h.html#ab7b0a273cdffb714d79fe2581f30f9a2" title="Syntactical equivalent of _Static_assert(), which is C11.">XMSS_STATIC_ASSERT</a> </dd></dl>
+
+</div>
+</div>
+<a id="a188a744461404b842791f98587b4e3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188a744461404b842791f98587b4e3e1">&#9670;&nbsp;</a></span>XMSS_ENABLE_SIGNING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XMSS_ENABLE_SIGNING&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the library is built with signing support. </p>
+<p>By default, signing support is enabled. This macro is defined with the value 0 if you compile the library with </p><div class="fragment"><div class="line">cmake -DXMSS_ENABLE_SIGNING=OFF</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab752a151dea1feb9bdc05977207f1d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab752a151dea1feb9bdc05977207f1d93">&#9670;&nbsp;</a></span>XMSS_LIBRARY_VERSION_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XMSS_LIBRARY_VERSION_MAJOR&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The major version of the library headers. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="version_8h.html#a1a5f3b2dbbf31bf758616df25b989390" title="The amalgamated semantic version (SemVer 2.0) of the library headers.">XMSS_LIBRARY_VERSION</a> </dd>
+<dd>
+<a class="el" href="version_8h.html#a7f615b41bf92e3a4279541ac297a0137" title="Retrieve, at application runtime, the amalgamated semantic version (SemVer 2.0) of the library at bui...">xmss_library_get_version()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a8244611621bd19ed13dd0fa97dd63f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8244611621bd19ed13dd0fa97dd63f91">&#9670;&nbsp;</a></span>XMSS_LIBRARY_VERSION_MINOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XMSS_LIBRARY_VERSION_MINOR&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The minor version of the library headers. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="version_8h.html#a1a5f3b2dbbf31bf758616df25b989390" title="The amalgamated semantic version (SemVer 2.0) of the library headers.">XMSS_LIBRARY_VERSION</a> </dd>
+<dd>
+<a class="el" href="version_8h.html#a7f615b41bf92e3a4279541ac297a0137" title="Retrieve, at application runtime, the amalgamated semantic version (SemVer 2.0) of the library at bui...">xmss_library_get_version()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a338eca65a7ce63e3924a12a5e769dd19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a338eca65a7ce63e3924a12a5e769dd19">&#9670;&nbsp;</a></span>XMSS_LIBRARY_VERSION_PATCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XMSS_LIBRARY_VERSION_PATCH&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The patch version of the library headers. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="version_8h.html#a1a5f3b2dbbf31bf758616df25b989390" title="The amalgamated semantic version (SemVer 2.0) of the library headers.">XMSS_LIBRARY_VERSION</a> </dd>
+<dd>
+<a class="el" href="version_8h.html#a7f615b41bf92e3a4279541ac297a0137" title="Retrieve, at application runtime, the amalgamated semantic version (SemVer 2.0) of the library at bui...">xmss_library_get_version()</a> </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_20optimization_313',['Hash optimization',['../hash-optimization.html',1,'']]]
+  ['embedded_20targets_357',['Embedded targets',['../embedded-targets.html',1,'']]]
 ];

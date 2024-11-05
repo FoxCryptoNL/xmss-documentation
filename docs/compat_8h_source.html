@@ -137,11 +137,11 @@ $(document).ready(function(){initNavTree('compat_8h_source.html',''); initResiza
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="xmss__config_8h.html">xmss_config.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#if (__STDC_VERSION__ &gt;= 201112L) || XMSS_CAN_USE_STATIC_ASSERT || defined(DOXYGEN)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="compat_8h.html#a8ce491b27b644889db1ca99d8c99c24e">   40</a></span>&#160;<span class="preprocessor">#   define STATIC_ASSERT(cond, msg) _Static_assert(cond, msg)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="compat_8h.html#ab7b0a273cdffb714d79fe2581f30f9a2">   40</a></span>&#160;<span class="preprocessor">#   define XMSS_STATIC_ASSERT(cond, msg) _Static_assert(cond, msg)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#elif XMSS_CAN_USE_EXTENSION_STATIC_ASSERT</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#   define STATIC_ASSERT(cond, msg) __extension__ _Static_assert(cond, msg)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#   define XMSS_STATIC_ASSERT(cond, msg) __extension__ _Static_assert(cond, msg)</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#   define STATIC_ASSERT(cond, msg) struct xmss_static_assert_unsupported</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#   define XMSS_STATIC_ASSERT(cond, msg) struct xmss_static_assert_unsupported</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !XMSS_COMPAT_H_INCLUDED */</span><span class="preprocessor"></span></div>

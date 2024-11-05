@@ -1,13 +1,15 @@
 <map id="compat.h" name="compat.h">
-<area shape="rect" id="node1" title="C99 compatibility layer." alt="" coords="1179,5,1262,32"/>
-<area shape="rect" id="node2" href="$opaque__structures_8h.html" title="Public definitions of opaque structures and memory management calls for those." alt="" coords="1143,162,1298,189"/>
-<area shape="rect" id="node3" href="$structures_8h.html" title="XMSS library specific structured types." alt="" coords="1093,244,1191,271"/>
-<area shape="rect" id="node6" href="$types_8h.html" title="Enumerations, basic types and callback function specifications." alt="" coords="795,80,865,107"/>
-<area shape="rect" id="node4" href="$signing_8h.html" title="Public API for the XMSS signing library." alt="" coords="473,319,555,345"/>
-<area shape="rect" id="node5" href="$verification_8h.html" title="Public API for the XMSS verification library." alt="" coords="1045,319,1151,345"/>
-<area shape="rect" id="node7" href="$generic__digest_8h.html" title="Abstract typedefs for hash function overrides using the generic interface." alt="" coords="43,162,172,189"/>
-<area shape="rect" id="node8" href="$override__sha256__generic_8h.html" title="Prototypes for the SHA&#45;256 hash function override using the generic interface." alt="" coords="197,162,394,189"/>
-<area shape="rect" id="node9" href="$override__sha256__internal_8h.html" title="Prototype for the SHA&#45;256 hash function override using the internal interface." alt="" coords="419,162,617,189"/>
-<area shape="rect" id="node10" href="$override__shake256__256__generic_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the generic interface." alt="" coords="642,155,818,196"/>
-<area shape="rect" id="node11" href="$override__shake256__256__internal_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the internal interface." alt="" coords="842,155,1018,196"/>
+<area shape="rect" id="node1" title="C99 compatibility layer." alt="" coords="999,5,1081,32"/>
+<area shape="rect" id="node2" href="$opaque__structures_8h.html" title="Public definitions of opaque structures and memory management calls for those." alt="" coords="5,162,160,189"/>
+<area shape="rect" id="node3" href="$structures_8h.html" title="XMSS library specific structured types." alt="" coords="235,244,333,271"/>
+<area shape="rect" id="node6" href="$types_8h.html" title="Enumerations, basic types and callback function specifications." alt="" coords="599,80,670,107"/>
+<area shape="rect" id="node13" href="$version_8h.html" title="Public API for XMSS library version control." alt="" coords="1483,80,1565,107"/>
+<area shape="rect" id="node5" href="$verification_8h.html" title="Public API for the XMSS verification library." alt="" coords="144,319,251,345"/>
+<area shape="rect" id="node4" href="$signing_8h.html" title="Public API for the XMSS signing library." alt="" coords="814,319,895,345"/>
+<area shape="rect" id="node7" href="$errors_8h.html" title="Public API for XMSS error handling." alt="" coords="285,162,357,189"/>
+<area shape="rect" id="node8" href="$generic__digest_8h.html" title="Abstract typedefs for hash function overrides using the generic interface." alt="" coords="382,162,511,189"/>
+<area shape="rect" id="node9" href="$override__sha256__generic_8h.html" title="Prototypes for the SHA&#45;256 hash function override using the generic interface." alt="" coords="536,162,733,189"/>
+<area shape="rect" id="node10" href="$override__sha256__internal_8h.html" title="Prototype for the SHA&#45;256 hash function override using the internal interface." alt="" coords="758,162,957,189"/>
+<area shape="rect" id="node11" href="$override__shake256__256__generic_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the generic interface." alt="" coords="981,155,1157,196"/>
+<area shape="rect" id="node12" href="$override__shake256__256__internal_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the internal interface." alt="" coords="1181,155,1357,196"/>
 </map>

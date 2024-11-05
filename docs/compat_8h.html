@@ -139,7 +139,7 @@ Include dependency graph for compat.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="compat_8h__dep__incl.svg" width="1327" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="compat_8h__dep__incl.svg" width="1571" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -151,23 +151,23 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compat_8h.html#a4195b499fd6d588922f59d858fec245d">XMSS_COMPAT_H_INCLUDED</a></td></tr>
 <tr class="memdesc:a4195b499fd6d588922f59d858fec245d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include guard. <br /></td></tr>
 <tr class="separator:a4195b499fd6d588922f59d858fec245d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce491b27b644889db1ca99d8c99c24e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compat_8h.html#a8ce491b27b644889db1ca99d8c99c24e">STATIC_ASSERT</a>(cond,  msg)&#160;&#160;&#160;_Static_assert(cond, msg)</td></tr>
-<tr class="memdesc:a8ce491b27b644889db1ca99d8c99c24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Syntactical equivalent of _Static_assert(), which is C11.  <a href="compat_8h.html#a8ce491b27b644889db1ca99d8c99c24e">More...</a><br /></td></tr>
-<tr class="separator:a8ce491b27b644889db1ca99d8c99c24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b0a273cdffb714d79fe2581f30f9a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compat_8h.html#ab7b0a273cdffb714d79fe2581f30f9a2">XMSS_STATIC_ASSERT</a>(cond,  msg)&#160;&#160;&#160;_Static_assert(cond, msg)</td></tr>
+<tr class="memdesc:ab7b0a273cdffb714d79fe2581f30f9a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Syntactical equivalent of <code>_Static_assert()</code>, which is C11.  <a href="compat_8h.html#ab7b0a273cdffb714d79fe2581f30f9a2">More...</a><br /></td></tr>
+<tr class="separator:ab7b0a273cdffb714d79fe2581f30f9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C99 compatibility layer. </p>
 <p>There is no need to include this header explicitly. Instead, include either <a class="el" href="verification_8h.html" title="Public API for the XMSS verification library.">verification.h</a> or <a class="el" href="signing_8h.html" title="Public API for the XMSS signing library.">signing.h</a>.</p>
 <p>The XMSS library is compatible with C99 compilers, but it also allows certain C11 features if they are available for the compiler at hand. This header ensures that the code does not get cluttered with preprocessor <code>#if</code>s. You can simply use the compatibility macros defined here, which will automatically either use the C11 feature (when available) or become a no-op (when not available). </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a8ce491b27b644889db1ca99d8c99c24e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ce491b27b644889db1ca99d8c99c24e">&#9670;&nbsp;</a></span>STATIC_ASSERT</h2>
+<a id="ab7b0a273cdffb714d79fe2581f30f9a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b0a273cdffb714d79fe2581f30f9a2">&#9670;&nbsp;</a></span>XMSS_STATIC_ASSERT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STATIC_ASSERT</td>
+          <td class="memname">#define XMSS_STATIC_ASSERT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">cond, </td>
@@ -186,8 +186,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Syntactical equivalent of _Static_assert(), which is C11. </p>
-<p>C11 supports _Static_assert(). CMake can detect if it is available anyway, even if the compiler is not C11. If CMake detects that static asserts are not supported, then this macro is a no-op.</p>
+<p>Syntactical equivalent of <code>_Static_assert()</code>, which is C11. </p>
+<p>C11 supports <code>_Static_assert()</code>. CMake can detect if it is available anyway, even if the compiler is not C11. If CMake detects that static asserts are not supported, then this macro is a no-op.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="xmss__config_8h.html#aa34c54b7aaa58b37c69138b5f308fb80" title="Indicates whether the compiler supports _Static_assert().">XMSS_CAN_USE_STATIC_ASSERT</a> </dd>
 <dd>
 <a class="el" href="xmss__config_8h.html#ad1edca72b4957256583b9426087c65e8" title="Indicates whether the compiler supports __extension__ _Static_assert().">XMSS_CAN_USE_EXTENSION_STATIC_ASSERT</a> </dd></dl>

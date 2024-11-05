@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['random_5fbytes_222',['random_bytes',['../structXmssSignature.html#a6fd97d771d86f18a302dae4a8a771549',1,'XmssSignature']]]
+  ['scheme_5fidentifier_254',['scheme_identifier',['../structXmssPublicKey.html#a0fe28036373323bdde96d4ab9363afb9',1,'XmssPublicKey']]],
+  ['seed_255',['seed',['../structXmssPublicKey.html#adc269b2276f9b69c85f8cdacf3a51bc2',1,'XmssPublicKey']]]
 ];

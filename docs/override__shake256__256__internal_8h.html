@@ -150,21 +150,21 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeced6dcaf3b0852c046792254ea1380d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#aeced6dcaf3b0852c046792254ea1380d">sponge_absorb</a> (uint64_t *restrict A, uint_fast16_t offset, const uint8_t *restrict bytes, uint_fast16_t byte_count)</td></tr>
-<tr class="memdesc:aeced6dcaf3b0852c046792254ea1380d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absorbs additional bytes into the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#aeced6dcaf3b0852c046792254ea1380d">More...</a><br /></td></tr>
-<tr class="separator:aeced6dcaf3b0852c046792254ea1380d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae77439cd10fedefb6b584c04dafa7f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#ae77439cd10fedefb6b584c04dafa7f71">sponge_absorb_native</a> (uint64_t *restrict A, const uint32_t *restrict words, uint_fast16_t word_count)</td></tr>
-<tr class="memdesc:ae77439cd10fedefb6b584c04dafa7f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absorbs additional native words into the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#ae77439cd10fedefb6b584c04dafa7f71">More...</a><br /></td></tr>
-<tr class="separator:ae77439cd10fedefb6b584c04dafa7f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1738b0a37def7265857de30ee5c0bd78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a1738b0a37def7265857de30ee5c0bd78">sponge_squeeze</a> (<a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict digest, const uint64_t *restrict const A)</td></tr>
-<tr class="memdesc:a1738b0a37def7265857de30ee5c0bd78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the digest from the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a1738b0a37def7265857de30ee5c0bd78">More...</a><br /></td></tr>
-<tr class="separator:a1738b0a37def7265857de30ee5c0bd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c80b5372b6d315c5052b61a87934f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a1c80b5372b6d315c5052b61a87934f37">sponge_squeeze_native</a> (<a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *restrict native_digest, const uint64_t *restrict const A)</td></tr>
-<tr class="memdesc:a1c80b5372b6d315c5052b61a87934f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the digest from the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a1c80b5372b6d315c5052b61a87934f37">More...</a><br /></td></tr>
-<tr class="separator:a1c80b5372b6d315c5052b61a87934f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96e1e42eb9aa45964fec7c1eb9d148cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a96e1e42eb9aa45964fec7c1eb9d148cf">keccak_p_1600_24</a> (uint64_t *A)</td></tr>
-<tr class="memdesc:a96e1e42eb9aa45964fec7c1eb9d148cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform an in-place $\Keccak$-$p[1600,24]$ transform of the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a96e1e42eb9aa45964fec7c1eb9d148cf">More...</a><br /></td></tr>
-<tr class="separator:a96e1e42eb9aa45964fec7c1eb9d148cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a5edb819d4785e5812dd53db9e05fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a09a5edb819d4785e5812dd53db9e05fb">xmss_sponge_absorb</a> (uint64_t *A, uint_fast8_t offset, const uint8_t *bytes, uint_fast8_t byte_count)</td></tr>
+<tr class="memdesc:a09a5edb819d4785e5812dd53db9e05fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absorbs additional bytes into the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a09a5edb819d4785e5812dd53db9e05fb">More...</a><br /></td></tr>
+<tr class="separator:a09a5edb819d4785e5812dd53db9e05fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60c7a9396de682b73219bc81df5735a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#af60c7a9396de682b73219bc81df5735a">xmss_sponge_absorb_native</a> (uint64_t *A, const uint32_t *words, uint_fast8_t word_count)</td></tr>
+<tr class="memdesc:af60c7a9396de682b73219bc81df5735a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absorbs additional native words into the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#af60c7a9396de682b73219bc81df5735a">More...</a><br /></td></tr>
+<tr class="separator:af60c7a9396de682b73219bc81df5735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345bc274b673d788b9b11596ad0cc1d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a345bc274b673d788b9b11596ad0cc1d8">xmss_sponge_squeeze</a> (<a class="el" href="structXmssValue256.html">XmssValue256</a> *digest, const uint64_t *A)</td></tr>
+<tr class="memdesc:a345bc274b673d788b9b11596ad0cc1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the digest from the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a345bc274b673d788b9b11596ad0cc1d8">More...</a><br /></td></tr>
+<tr class="separator:a345bc274b673d788b9b11596ad0cc1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ef5999ff18defd7ba85d77abaf9945d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a4ef5999ff18defd7ba85d77abaf9945d">xmss_sponge_squeeze_native</a> (<a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *native_digest, const uint64_t *A)</td></tr>
+<tr class="memdesc:a4ef5999ff18defd7ba85d77abaf9945d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the digest from the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a4ef5999ff18defd7ba85d77abaf9945d">More...</a><br /></td></tr>
+<tr class="separator:a4ef5999ff18defd7ba85d77abaf9945d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa2e17c2a4c100e8f4d9b15217ea1e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__internal_8h.html#a5aa2e17c2a4c100e8f4d9b15217ea1e5">xmss_keccak_p_1600_24</a> (uint64_t *A)</td></tr>
+<tr class="memdesc:a5aa2e17c2a4c100e8f4d9b15217ea1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform an in-place $\Keccak$-$p[1600,24]$ transform of the state array <b>A</b>.  <a href="override__shake256__256__internal_8h.html#a5aa2e17c2a4c100e8f4d9b15217ea1e5">More...</a><br /></td></tr>
+<tr class="separator:a5aa2e17c2a4c100e8f4d9b15217ea1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Prototypes for the SHAKE256/256 hash function override using the internal interface. </p>
@@ -180,14 +180,14 @@ Functions</h2></td></tr>
 <p>This interface prevents unnecessary copying of memory, unnecessary byte swapping, and alignment issues.</p>
 <p>Compile the library with CMake as follows: </p><div class="fragment"><div class="line">cmake -DXMSS_SHAKE256_256=OverrideInternal</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a96e1e42eb9aa45964fec7c1eb9d148cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96e1e42eb9aa45964fec7c1eb9d148cf">&#9670;&nbsp;</a></span>keccak_p_1600_24()</h2>
+<a id="a5aa2e17c2a4c100e8f4d9b15217ea1e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa2e17c2a4c100e8f4d9b15217ea1e5">&#9670;&nbsp;</a></span>xmss_keccak_p_1600_24()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void keccak_p_1600_24 </td>
+          <td class="memname">void xmss_keccak_p_1600_24 </td>
           <td>(</td>
           <td class="paramtype">uint64_t *&#160;</td>
           <td class="paramname"><em>A</em></td><td>)</td>
@@ -200,6 +200,7 @@ Functions</h2></td></tr>
 <p>This function implements $\Keccak$-$p[b=1600,n_{r}=24]$ as defined by NIST FIPS 202, Section 3.3.</p>
 <p>Note that instead of accepting a string $S$, this function accepts a state array <b>A</b>, see NIST FIPS 202, Section 3.1.2.</p>
 <p>Note that instead of returning the result, this function transforms the input state array in-place.</p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>The state array. </td></tr>
@@ -209,34 +210,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aeced6dcaf3b0852c046792254ea1380d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeced6dcaf3b0852c046792254ea1380d">&#9670;&nbsp;</a></span>sponge_absorb()</h2>
+<a id="a09a5edb819d4785e5812dd53db9e05fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09a5edb819d4785e5812dd53db9e05fb">&#9670;&nbsp;</a></span>xmss_sponge_absorb()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sponge_absorb </td>
+          <td class="memname">void xmss_sponge_absorb </td>
           <td>(</td>
-          <td class="paramtype">uint64_t *restrict&#160;</td>
+          <td class="paramtype">uint64_t *&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint_fast16_t&#160;</td>
+          <td class="paramtype">uint_fast8_t&#160;</td>
           <td class="paramname"><em>offset</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t *restrict&#160;</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
           <td class="paramname"><em>bytes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint_fast16_t&#160;</td>
+          <td class="paramtype">uint_fast8_t&#160;</td>
           <td class="paramname"><em>byte_count</em>&#160;</td>
         </tr>
         <tr>
@@ -248,12 +249,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Absorbs additional bytes into the state array <b>A</b>. </p>
-<p>offset + byte_count does not extend beyond the block size of 136 bytes for SHAKE256/256. This function XORs the additional bytes into the internal layout of the state array.</p>
+<p><code>offset</code> + <code>byte_count</code> does not extend beyond the block size of 136 bytes for SHAKE256/256. This function XORs the additional bytes into the internal layout of the state array <code>A</code>.</p>
+<p>This function is never called with empty data; i.e. <code>byte_count</code> &gt;= 1.</p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>The state array. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>The offset into the 136-byte block where to start absorbing the bytes. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">bytes</td><td>Input bytes; may be NULL if and only if byte_count is 0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bytes</td><td>Input bytes. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">byte_count</td><td>Length in bytes of the input. </td></tr>
   </table>
   </dd>
@@ -261,28 +264,28 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae77439cd10fedefb6b584c04dafa7f71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae77439cd10fedefb6b584c04dafa7f71">&#9670;&nbsp;</a></span>sponge_absorb_native()</h2>
+<a id="af60c7a9396de682b73219bc81df5735a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af60c7a9396de682b73219bc81df5735a">&#9670;&nbsp;</a></span>xmss_sponge_absorb_native()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sponge_absorb_native </td>
+          <td class="memname">void xmss_sponge_absorb_native </td>
           <td>(</td>
-          <td class="paramtype">uint64_t *restrict&#160;</td>
+          <td class="paramtype">uint64_t *&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t *restrict&#160;</td>
+          <td class="paramtype">const uint32_t *&#160;</td>
           <td class="paramname"><em>words</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint_fast16_t&#160;</td>
+          <td class="paramtype">uint_fast8_t&#160;</td>
           <td class="paramname"><em>word_count</em>&#160;</td>
         </tr>
         <tr>
@@ -294,11 +297,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Absorbs additional native words into the state array <b>A</b>. </p>
-<p>Absorption starts at the beginning of the 136 bytes block for SHAKE256/256. word_count does not extend beyond the block size of 136 bytes for SHAKE256/256; i.e., word_count &lt;= 34. This function XORs the words into the internal layout of the state array.</p>
+<p>Absorption starts at the beginning of the 136 bytes block for SHAKE256/256. <code>word_count</code> does not extend beyond the block size of 136 bytes for SHAKE256/256; i.e., <code>word_count</code> &lt;= 34. This function XORs the words into the internal layout of the state array <code>A</code>.</p>
+<p>This function is never called with empty data; i.e. <code>word_count</code> &gt;= 1.</p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">A</td><td>The state array. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">words</td><td>Input words; may be NULL if and only if byte_count is 0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">words</td><td>Input words. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">word_count</td><td>Length in 32-bit words of the input. </td></tr>
   </table>
   </dd>
@@ -306,22 +311,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1738b0a37def7265857de30ee5c0bd78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1738b0a37def7265857de30ee5c0bd78">&#9670;&nbsp;</a></span>sponge_squeeze()</h2>
+<a id="a345bc274b673d788b9b11596ad0cc1d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345bc274b673d788b9b11596ad0cc1d8">&#9670;&nbsp;</a></span>xmss_sponge_squeeze()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sponge_squeeze </td>
+          <td class="memname">void xmss_sponge_squeeze </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssValue256.html">XmssValue256</a> *&#160;</td>
           <td class="paramname"><em>digest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint64_t *restrict const&#160;</td>
+          <td class="paramtype">const uint64_t *&#160;</td>
           <td class="paramname"><em>A</em>&#160;</td>
         </tr>
         <tr>
@@ -333,6 +338,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Extracts the digest from the state array <b>A</b>. </p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">digest</td><td>The output digest. </td></tr>
@@ -343,22 +349,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1c80b5372b6d315c5052b61a87934f37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c80b5372b6d315c5052b61a87934f37">&#9670;&nbsp;</a></span>sponge_squeeze_native()</h2>
+<a id="a4ef5999ff18defd7ba85d77abaf9945d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef5999ff18defd7ba85d77abaf9945d">&#9670;&nbsp;</a></span>xmss_sponge_squeeze_native()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sponge_squeeze_native </td>
+          <td class="memname">void xmss_sponge_squeeze_native </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *&#160;</td>
           <td class="paramname"><em>native_digest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint64_t *restrict const&#160;</td>
+          <td class="paramtype">const uint64_t *&#160;</td>
           <td class="paramname"><em>A</em>&#160;</td>
         </tr>
         <tr>
@@ -370,6 +376,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Extracts the digest from the state array <b>A</b>. </p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">native_digest</td><td>The output digest. </td></tr>

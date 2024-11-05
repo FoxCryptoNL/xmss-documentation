@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('structXmssPublicKeyInternalBlob.html',
 Public Attributes</h2></td></tr>
 <tr class="memitem:aad2c2050ccd7dc073f22d7fed6cc80ce"><td class="memItemLeft" align="right" valign="top"><a id="aad2c2050ccd7dc073f22d7fed6cc80ce"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKeyInternalBlob.html#aad2c2050ccd7dc073f22d7fed6cc80ce">data_size</a></td></tr>
-<tr class="memdesc:aad2c2050ccd7dc073f22d7fed6cc80ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size in bytes of the data array. <br /></td></tr>
+<tr class="memdesc:aad2c2050ccd7dc073f22d7fed6cc80ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size in bytes of the <code>data</code> array. <br /></td></tr>
 <tr class="separator:aad2c2050ccd7dc073f22d7fed6cc80ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad44fb3f18f56d56335feba9e300cf729"><td class="memItemLeft" align="right" valign="top"><a id="ad44fb3f18f56d56335feba9e300cf729"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKeyInternalBlob.html#ad44fb3f18f56d56335feba9e300cf729">data</a> []</td></tr>
@@ -147,7 +147,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="s
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A stored public key for the signing library. </p>
 <p>Use this structure's contents to store or read a public key for the signing library.</p>
-<p>After writing a public key, it is strongly recommended to read it back and validate the correctness of the read back version using xmss_verify_public_key.</p>
+<p>After writing a public key, it is strongly recommended to read it back and validate the correctness of the read back version using <a class="el" href="signing_8h.html#a6c5fe4941f1e1f8f7e5d77877dd42917" title="Verify the validity and integrity of a public key blob.">xmss_verify_public_key()</a>.</p>
 <p>When creating an <a class="el" href="structXmssPublicKeyInternalBlob.html" title="A stored public key for the signing library.">XmssPublicKeyInternalBlob</a>, the <a class="el" href="structures_8h.html#a124b523b7c32d3c56ace3371c57cd232" title="The size in bytes of an XmssPublicKeyInternalBlob.">XMSS_PUBLIC_KEY_INTERNAL_BLOB_SIZE()</a> macro can be used to allocate the correct size for the structure and its opaque contents. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="structures_8h_source.html">structures.h</a></li>

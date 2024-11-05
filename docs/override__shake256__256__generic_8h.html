@@ -151,15 +151,15 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7cf66b9160ff90bd4f0a4edc3ac890d6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#a7cf66b9160ff90bd4f0a4edc3ac890d6">shake256_256_init</a> (void)</td></tr>
-<tr class="memdesc:a7cf66b9160ff90bd4f0a4edc3ac890d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest initialization function. Returns a context for use by the update and finalize functions. The supplier of the generic digest override has full control over the context; the returned context is treated as opaque by the XMSS library.  <a href="override__shake256__256__generic_8h.html#a7cf66b9160ff90bd4f0a4edc3ac890d6">More...</a><br /></td></tr>
-<tr class="separator:a7cf66b9160ff90bd4f0a4edc3ac890d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa39671defc899ed68bd2d52d5801de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#a5aa39671defc899ed68bd2d52d5801de">shake256_256_update</a> (void *restrict context, const uint8_t *restrict data, size_t data_length)</td></tr>
-<tr class="memdesc:a5aa39671defc899ed68bd2d52d5801de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest update function. Updates the internal hash state for a single digest calculation with the additional data supplied.  <a href="override__shake256__256__generic_8h.html#a5aa39671defc899ed68bd2d52d5801de">More...</a><br /></td></tr>
-<tr class="separator:a5aa39671defc899ed68bd2d52d5801de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a863c9308ff141cb4557849540502903d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#a863c9308ff141cb4557849540502903d">shake256_256_finalize</a> (void *restrict context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict digest)</td></tr>
-<tr class="memdesc:a863c9308ff141cb4557849540502903d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest finalize function. Outputs the digest and disposes the context.  <a href="override__shake256__256__generic_8h.html#a863c9308ff141cb4557849540502903d">More...</a><br /></td></tr>
-<tr class="separator:a863c9308ff141cb4557849540502903d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1b9b1b7c27734cb4c092b49ef5f31e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#aed1b9b1b7c27734cb4c092b49ef5f31e">xmss_shake256_256_init</a> (void)</td></tr>
+<tr class="memdesc:aed1b9b1b7c27734cb4c092b49ef5f31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest initialization function. Returns a context for use by the update and finalize functions. The supplier of the generic digest override has full control over the context; the returned context is treated as opaque by the XMSS library.  <a href="override__shake256__256__generic_8h.html#aed1b9b1b7c27734cb4c092b49ef5f31e">More...</a><br /></td></tr>
+<tr class="separator:aed1b9b1b7c27734cb4c092b49ef5f31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b50c97550145cf32343d6d27c45e02d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#a8b50c97550145cf32343d6d27c45e02d">xmss_shake256_256_update</a> (void *context, const uint8_t *data, size_t data_length)</td></tr>
+<tr class="memdesc:a8b50c97550145cf32343d6d27c45e02d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest update function. Updates the internal hash state for a single digest calculation with the additional data supplied.  <a href="override__shake256__256__generic_8h.html#a8b50c97550145cf32343d6d27c45e02d">More...</a><br /></td></tr>
+<tr class="separator:a8b50c97550145cf32343d6d27c45e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75213fade96ac223d21923a93e34e095"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__shake256__256__generic_8h.html#a75213fade96ac223d21923a93e34e095">xmss_shake256_256_finalize</a> (void *context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *digest)</td></tr>
+<tr class="memdesc:a75213fade96ac223d21923a93e34e095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest finalize function. Outputs the digest and disposes the context.  <a href="override__shake256__256__generic_8h.html#a75213fade96ac223d21923a93e34e095">More...</a><br /></td></tr>
+<tr class="separator:a75213fade96ac223d21923a93e34e095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Prototypes for the SHAKE256/256 hash function override using the generic interface. </p>
@@ -167,22 +167,22 @@ Functions</h2></td></tr>
 <p>Include this file in your override implementation for SHAKE256/256 using the generic digest interface.</p>
 <p>Compile the library with CMake as follows: </p><div class="fragment"><div class="line">cmake -DXMSS_SHAKE256_256=OverrideGeneric</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a863c9308ff141cb4557849540502903d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a863c9308ff141cb4557849540502903d">&#9670;&nbsp;</a></span>shake256_256_finalize()</h2>
+<a id="a75213fade96ac223d21923a93e34e095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75213fade96ac223d21923a93e34e095">&#9670;&nbsp;</a></span>xmss_shake256_256_finalize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void shake256_256_finalize </td>
+          <td class="memname">void xmss_shake256_256_finalize </td>
           <td>(</td>
-          <td class="paramtype">void *restrict&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssValue256.html">XmssValue256</a> *&#160;</td>
           <td class="paramname"><em>digest</em>&#160;</td>
         </tr>
         <tr>
@@ -201,19 +201,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="generic__digest_8h.html#abc416e7271495372ada26300197d51e5" title="Generic digest finalize function. Outputs the digest and disposes the context.">XmssGenericDigestFinalize</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="generic__digest_8h.html#add2e437e8e105180243e77cd1a807a78" title="Generic digest finalize function. Outputs the digest and disposes the context.">XmssGenericDigestFinalize</a></dd></dl>
 <p>This is the specialization for the SHAKE256/256 algorithm. </p>
 
 </div>
 </div>
-<a id="a7cf66b9160ff90bd4f0a4edc3ac890d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf66b9160ff90bd4f0a4edc3ac890d6">&#9670;&nbsp;</a></span>shake256_256_init()</h2>
+<a id="aed1b9b1b7c27734cb4c092b49ef5f31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1b9b1b7c27734cb4c092b49ef5f31e">&#9670;&nbsp;</a></span>xmss_shake256_256_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* shake256_256_init </td>
+          <td class="memname">void* xmss_shake256_256_init </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -230,22 +230,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5aa39671defc899ed68bd2d52d5801de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aa39671defc899ed68bd2d52d5801de">&#9670;&nbsp;</a></span>shake256_256_update()</h2>
+<a id="a8b50c97550145cf32343d6d27c45e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b50c97550145cf32343d6d27c45e02d">&#9670;&nbsp;</a></span>xmss_shake256_256_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void shake256_256_update </td>
+          <td class="memname">void xmss_shake256_256_update </td>
           <td>(</td>
-          <td class="paramtype">void *restrict&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t *restrict&#160;</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -266,12 +266,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>An opaque context, i.e., the result of the most recent call to the initialization function on this thread. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The byte stream of additional data to be included in the message; may be NULL if and only if data_length is zero. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data_length</td><td>The number of bytes pointed to by data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The byte stream of additional data to be included in the message; may be NULL if and only if <code>data_length</code> is zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_length</td><td>The number of bytes pointed to by <code>data</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="generic__digest_8h.html#a79d8842f9a7c8c5f41d0c5ee5af71e76" title="Generic digest update function. Updates the internal hash state for a single digest calculation with ...">XmssGenericDigestUpdate</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="generic__digest_8h.html#a8dda490fe943bf272daa67e0843f8146" title="Generic digest update function. Updates the internal hash state for a single digest calculation with ...">XmssGenericDigestUpdate</a></dd></dl>
 <p>This is the specialization for the SHAKE256/256 algorithm. </p>
 
 </div>

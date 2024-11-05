@@ -2,6 +2,7 @@ var files_dup =
 [
     [ "xmss_config.h", "xmss__config_8h.html", "xmss__config_8h" ],
     [ "compat.h", "compat_8h.html", "compat_8h" ],
+    [ "errors.h", "errors_8h.html", "errors_8h" ],
     [ "generic_digest.h", "generic__digest_8h.html", "generic__digest_8h" ],
     [ "opaque_structures.h", "opaque__structures_8h.html", "opaque__structures_8h" ],
     [ "override_sha256_generic.h", "override__sha256__generic_8h.html", "override__sha256__generic_8h" ],
@@ -11,5 +12,6 @@ var files_dup =
     [ "signing.h", "signing_8h.html", "signing_8h" ],
     [ "structures.h", "structures_8h.html", "structures_8h" ],
     [ "types.h", "types_8h.html", "types_8h" ],
-    [ "verification.h", "verification_8h.html", "verification_8h" ]
+    [ "verification.h", "verification_8h.html", "verification_8h" ],
+    [ "version.h", "version_8h.html", "version_8h" ]
 ];

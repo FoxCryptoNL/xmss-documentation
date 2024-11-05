@@ -146,7 +146,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a96f1cf28c210cf910c48f3c279661839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fd97d771d86f18a302dae4a8a771549"><td class="memItemLeft" align="right" valign="top"><a id="a6fd97d771d86f18a302dae4a8a771549"></a>
 <a class="el" href="structXmssValue256.html">XmssValue256</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssSignature.html#a6fd97d771d86f18a302dae4a8a771549">random_bytes</a></td></tr>
-<tr class="memdesc:a6fd97d771d86f18a302dae4a8a771549"><td class="mdescLeft">&#160;</td><td class="mdescRight">The randomized hashing string r. <br /></td></tr>
+<tr class="memdesc:a6fd97d771d86f18a302dae4a8a771549"><td class="mdescLeft">&#160;</td><td class="mdescRight">The randomized hashing string $r$. <br /></td></tr>
 <tr class="separator:a6fd97d771d86f18a302dae4a8a771549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55970d57d98bb8bcc4e858abd91dbd03"><td class="memItemLeft" align="right" valign="top"><a id="a55970d57d98bb8bcc4e858abd91dbd03"></a>
 <a class="el" href="structXmssValue256.html">XmssValue256</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssSignature.html#a55970d57d98bb8bcc4e858abd91dbd03">wots_signature</a> [67]</td></tr>
@@ -174,7 +174,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The authentication path. </p>
-<p>auth_path contains one node for every level in the tree, so tree_depth nodes in total. </p>
+<p><code>authentication_path</code> contains one node for every level in the tree, so <code>tree_depth</code> nodes in total. </p>
 
 </div>
 </div>
@@ -191,7 +191,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The leaf index of the key that was used for generating the signature. If index obfuscation is used, then this is the obfuscated index. </p>
-<p>leaf_index must be written in big-endian notation. </p>
+<p><code>leaf_index</code> must be written in big-endian notation. </p>
 
 </div>
 </div>

@@ -125,18 +125,18 @@ $(document).ready(function(){initNavTree('secure-boolean-functions.html',''); in
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md24">Problem definition</a></li>
-<li class="level1"><a href="#autotoc_md25">Rationale for using Hamming codes</a><ul><li class="level2"><a href="#autotoc_md26">Rationale for not using a value with all bits 0</a></li>
-<li class="level2"><a href="#autotoc_md27">Relation to functions returning an error code</a></li>
-<li class="level2"><a href="#autotoc_md28">Rationale for using 8-bit values on 32/64-bit platforms</a></li>
+<ul><li class="level1"><a href="#autotoc_md29">Problem definition</a></li>
+<li class="level1"><a href="#autotoc_md30">Rationale for using Hamming codes</a><ul><li class="level2"><a href="#autotoc_md31">Rationale for not using a value with all bits 0</a></li>
+<li class="level2"><a href="#autotoc_md32">Relation to functions returning an error code</a></li>
+<li class="level2"><a href="#autotoc_md33">Rationale for using 8-bit values on 32/64-bit platforms</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md29">Conclusion</a></li>
+<li class="level1"><a href="#autotoc_md34">Conclusion</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_Ybiz_PBn_0_crypto_xmss_documentation_build_docs_0100_secure_boolean_functions"></a></p>
 <p>This document provides the rationale for <em>not</em> having API functions returning naive boolean values.</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Problem definition</h1>
 <p>Different users of the XMSS library have different requirements for bit error resilience. We consider the following problems with simple booleans:</p>
 <ol type="1">
@@ -149,7 +149,7 @@ Problem definition</h1>
 </ol>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md25"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Rationale for using Hamming codes</h1>
 <p>To mitigate both problems, the API always returns values that have a Hamming distance of at least 4 bits</p>
 <ul>
@@ -161,17 +161,17 @@ Rationale for using Hamming codes</h1>
 <p>The Hamming(8,4) codes consist of 16 different data values using 8 bits, one of which is represented by all bits 0.</p>
 <p>The value with all bits 0 is not used.</p>
 <p>One non-zero value is selected to represent <code>true</code>, another non-zero value is selected to represent <code>false</code>.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Rationale for not using a value with all bits 0</h2>
 <p>One identified fault injection attack is to replace all bits with 0. This is mitigated by requiring that a value with all bits 0 is never a valid return value.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Relation to functions returning an error code</h2>
 <p>The remaining 13 Hamming(8,4) codes, excluding the values for <code>true</code> and <code>false</code> and excluding the value with all bits 0, are available to bit error resilient error and/or success values.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Rationale for using 8-bit values on 32/64-bit platforms</h2>
 <p>The API always uses return type <code>int</code>, which is at least 32 bits on the supported platforms. Therefore, all Hamming(8,4) codes have a Hamming distance of at least 24 with respect to the fault injection attack forcing all bits to 1.</p>
 <p>Some instruction sets are optimized for comparison with immediate 8-bit values. Even though a return value is usually of type <code>int</code>, which is usually 32 bits, it is still beneficial to restrict the return values to 8 bits when possible. In case more than 15 different return values are required, it is recommended to use the 15 non-zero Hamming(8,4) codes for the most common values and augment them with other values beyond 8 bits and restrict those values to also having a Hamming distance of at least 4 with respect to each other and with respect to the Hamming(8,4) codes.</p>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Conclusion</h1>
 <p>The API ensures that both logical return values <code>true</code> and <code>false</code> are resilient against any 1, 2, or 3 bit errors, as well as against replacing all bits of the return value with either 0 or 1.</p>
 <p>The API furthermore allows for up to 13 efficient, bit error resilient, success/error return values. </p>

@@ -1,5 +1,0 @@
-<map id="XmssPublicKeyBlob" name="XmssPublicKeyBlob">
-<area shape="rect" id="node1" title="Structure containing the size and the public key formatted for export." alt="" coords="5,199,156,225"/>
-<area shape="rect" id="node2" href="$structXmssPublicKey.html" title="Exportable format for a public key." alt="" coords="20,109,141,136"/>
-<area shape="rect" id="node3" href="$structXmssValue256.html" title="A generic 256&#45;bit value, represented as a byte stream." alt="" coords="21,5,140,32"/>
-</map>

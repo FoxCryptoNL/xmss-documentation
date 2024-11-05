@@ -150,9 +150,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a92f44060033b7141d8917adb72a91f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__sha256__internal_8h.html#a92f44060033b7141d8917adb72a91f46">sha256_process_block</a> (<a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *restrict Hi, const uint32_t *restrict Mi)</td></tr>
-<tr class="memdesc:a92f44060033b7141d8917adb72a91f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the intermediate SHA-256 hash value $H_i$ by processing a single, additional message block $M_i$.  <a href="override__sha256__internal_8h.html#a92f44060033b7141d8917adb72a91f46">More...</a><br /></td></tr>
-<tr class="separator:a92f44060033b7141d8917adb72a91f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936810ed42f65439a14735cf7e04bda3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="override__sha256__internal_8h.html#a936810ed42f65439a14735cf7e04bda3">xmss_sha256_process_block</a> (<a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *Hi, const uint32_t *Mi)</td></tr>
+<tr class="memdesc:a936810ed42f65439a14735cf7e04bda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the intermediate SHA-256 hash value $H_i$ by processing a single, additional message block $M_i$.  <a href="override__sha256__internal_8h.html#a936810ed42f65439a14735cf7e04bda3">More...</a><br /></td></tr>
+<tr class="separator:a936810ed42f65439a14735cf7e04bda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Prototype for the SHA-256 hash function override using the internal interface. </p>
@@ -170,22 +170,22 @@ Functions</h2></td></tr>
 <p>This interface prevents unnecessary copying of memory, unnecessary byte swapping, and alignment issues.</p>
 <p>Compile the library with CMake as follows: </p><div class="fragment"><div class="line">cmake -DXMSS_SHA256=OverrideInternal</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a92f44060033b7141d8917adb72a91f46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92f44060033b7141d8917adb72a91f46">&#9670;&nbsp;</a></span>sha256_process_block()</h2>
+<a id="a936810ed42f65439a14735cf7e04bda3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936810ed42f65439a14735cf7e04bda3">&#9670;&nbsp;</a></span>xmss_sha256_process_block()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void sha256_process_block </td>
+          <td class="memname">void xmss_sha256_process_block </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssNativeValue256.html">XmssNativeValue256</a> *&#160;</td>
           <td class="paramname"><em>Hi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t *restrict&#160;</td>
+          <td class="paramtype">const uint32_t *&#160;</td>
           <td class="paramname"><em>Mi</em>&#160;</td>
         </tr>
         <tr>
@@ -198,6 +198,7 @@ Functions</h2></td></tr>
 
 <p>Update the intermediate SHA-256 hash value $H_i$ by processing a single, additional message block $M_i$. </p>
 <p>This function implements the loop body of the SHA-256($M$) function as defined by NIST FIPS 180-4, Section 6.2.2, Steps 1, 2, 3, and 4.</p>
+<p>For performance reasons, it is recommended not to validate the input. This function is guaranteed to be called by the library with valid input.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">Hi</td><td>Intermediate hash value $H_i$ in native form. </td></tr>

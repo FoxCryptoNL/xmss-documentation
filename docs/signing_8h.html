@@ -150,45 +150,45 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad2e2848dabf7611508fc43544898d6a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#ad2e2848dabf7611508fc43544898d6a4">xmss_context_initialize</a> (<a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *restrict *restrict context, <a class="el" href="types_8h.html#ae28a452b1a628877fd2fa9eb9502af68">XmssParameterSetOID</a> parameter_set, <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c">XmssReallocFunction</a> custom_realloc, <a class="el" href="types_8h.html#a50031a0fdc84760a9e99a09177b1cc3b">XmssFreeFunction</a> custom_free, <a class="el" href="types_8h.html#ab4b89586664b17b21536085a64f80e15">XmssZeroizeFunction</a> zeroize)</td></tr>
-<tr class="memdesc:ad2e2848dabf7611508fc43544898d6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new instantiation of the signature key and generation library.  <a href="signing_8h.html#ad2e2848dabf7611508fc43544898d6a4">More...</a><br /></td></tr>
-<tr class="separator:ad2e2848dabf7611508fc43544898d6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33651e16538a16e69984b82d7dbda45c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a33651e16538a16e69984b82d7dbda45c">xmss_context_initialize</a> (<a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> **context, <a class="el" href="types_8h.html#ae28a452b1a628877fd2fa9eb9502af68">XmssParameterSetOID</a> parameter_set, <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c">XmssReallocFunction</a> custom_realloc, <a class="el" href="types_8h.html#a50031a0fdc84760a9e99a09177b1cc3b">XmssFreeFunction</a> custom_free, <a class="el" href="types_8h.html#ab4b89586664b17b21536085a64f80e15">XmssZeroizeFunction</a> zeroize)</td></tr>
+<tr class="memdesc:a33651e16538a16e69984b82d7dbda45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new instantiation of the signature key and generation library.  <a href="signing_8h.html#a33651e16538a16e69984b82d7dbda45c">More...</a><br /></td></tr>
+<tr class="separator:a33651e16538a16e69984b82d7dbda45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef767631bb2e33d902a600792210955"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#afef767631bb2e33d902a600792210955">xmss_load_private_key</a> (<a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> **key_context, const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *private_key, const <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> *key_usage, const <a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *context)</td></tr>
 <tr class="memdesc:afef767631bb2e33d902a600792210955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a private key partition from storage.  <a href="signing_8h.html#afef767631bb2e33d902a600792210955">More...</a><br /></td></tr>
 <tr class="separator:afef767631bb2e33d902a600792210955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bee0f9ea0bae9d69aef3b1d24b8b17b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a5bee0f9ea0bae9d69aef3b1d24b8b17b">xmss_load_public_key</a> (<a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **restrict cache, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict key_context, const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *restrict public_key)</td></tr>
-<tr class="memdesc:a5bee0f9ea0bae9d69aef3b1d24b8b17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a public key from storage.  <a href="signing_8h.html#a5bee0f9ea0bae9d69aef3b1d24b8b17b">More...</a><br /></td></tr>
-<tr class="separator:a5bee0f9ea0bae9d69aef3b1d24b8b17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa8963dc29966db6c06efe849e20f04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#afaa8963dc29966db6c06efe849e20f04">xmss_generate_private_key</a> (<a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> **key_context, <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> **private_key, <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **key_usage, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *secure_random, const <a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c">XmssIndexObfuscationSetting</a> index_obfuscation_setting, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *random, const <a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *context)</td></tr>
-<tr class="memdesc:afaa8963dc29966db6c06efe849e20f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a new private key.  <a href="signing_8h.html#afaa8963dc29966db6c06efe849e20f04">More...</a><br /></td></tr>
-<tr class="separator:afaa8963dc29966db6c06efe849e20f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58121a033eacf0bcca3234cca6b6bdbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf">xmss_generate_public_key</a> (<a class="el" href="opaque__structures_8h.html#a808a85d8aa5c06edbc9439c3e653a315">XmssKeyGenerationContext</a> **generation_buffer, <a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **cache, <a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **generation_cache, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, const <a class="el" href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6">XmssCacheType</a> cache_type, const uint8_t cache_level, const uint32_t generation_partitions)</td></tr>
-<tr class="memdesc:a58121a033eacf0bcca3234cca6b6bdbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process of generating the public key.  <a href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf">More...</a><br /></td></tr>
-<tr class="separator:a58121a033eacf0bcca3234cca6b6bdbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4174507bd46fa0ed2f9b564215fd16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16">xmss_calculate_public_key_part</a> (<a class="el" href="opaque__structures_8h.html#a808a85d8aa5c06edbc9439c3e653a315">XmssKeyGenerationContext</a> *generation_buffer, const uint32_t partition_index)</td></tr>
-<tr class="memdesc:a3b4174507bd46fa0ed2f9b564215fd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform work on an ongoing public key calculation.  <a href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16">More...</a><br /></td></tr>
-<tr class="separator:a3b4174507bd46fa0ed2f9b564215fd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ef51fd627268a940fe8226cb670ba3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a54ef51fd627268a940fe8226cb670ba3">xmss_load_public_key</a> (<a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **cache, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *public_key)</td></tr>
+<tr class="memdesc:a54ef51fd627268a940fe8226cb670ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a public key from storage.  <a href="signing_8h.html#a54ef51fd627268a940fe8226cb670ba3">More...</a><br /></td></tr>
+<tr class="separator:a54ef51fd627268a940fe8226cb670ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca94f25a7db0c94b0c284989c094071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a7ca94f25a7db0c94b0c284989c094071">xmss_generate_private_key</a> (<a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> **key_context, <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> **private_key, <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **key_usage, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *secure_random, <a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c">XmssIndexObfuscationSetting</a> index_obfuscation_setting, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *random, const <a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *context)</td></tr>
+<tr class="memdesc:a7ca94f25a7db0c94b0c284989c094071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a new private key.  <a href="signing_8h.html#a7ca94f25a7db0c94b0c284989c094071">More...</a><br /></td></tr>
+<tr class="separator:a7ca94f25a7db0c94b0c284989c094071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f3e2e4231b275cd48102fbdeb4197fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb">xmss_generate_public_key</a> (<a class="el" href="opaque__structures_8h.html#a808a85d8aa5c06edbc9439c3e653a315">XmssKeyGenerationContext</a> **generation_buffer, <a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **cache, <a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **generation_cache, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, <a class="el" href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6">XmssCacheType</a> cache_type, uint8_t cache_level, uint32_t generation_partitions)</td></tr>
+<tr class="memdesc:a9f3e2e4231b275cd48102fbdeb4197fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process of generating the public key.  <a href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb">More...</a><br /></td></tr>
+<tr class="separator:a9f3e2e4231b275cd48102fbdeb4197fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606eaa18a018d3be0379c0b5432b104e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e">xmss_calculate_public_key_part</a> (<a class="el" href="opaque__structures_8h.html#a808a85d8aa5c06edbc9439c3e653a315">XmssKeyGenerationContext</a> *generation_buffer, uint32_t partition_index)</td></tr>
+<tr class="memdesc:a606eaa18a018d3be0379c0b5432b104e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform work on an ongoing public key calculation.  <a href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e">More...</a><br /></td></tr>
+<tr class="separator:a606eaa18a018d3be0379c0b5432b104e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca0507dfa8d9b4a875ae982f7f53c283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#aca0507dfa8d9b4a875ae982f7f53c283">xmss_finish_calculate_public_key</a> (<a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> **public_key, <a class="el" href="opaque__structures_8h.html#a808a85d8aa5c06edbc9439c3e653a315">XmssKeyGenerationContext</a> **generation_buffer, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
 <tr class="memdesc:aca0507dfa8d9b4a875ae982f7f53c283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalize calculation on a public key.  <a href="signing_8h.html#aca0507dfa8d9b4a875ae982f7f53c283">More...</a><br /></td></tr>
 <tr class="separator:aca0507dfa8d9b4a875ae982f7f53c283"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b24680115001871c5270a6a67435908"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a7b24680115001871c5270a6a67435908">xmss_request_future_signatures</a> (<a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **restrict new_key_usage, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict key_context, const uint32_t signature_count)</td></tr>
-<tr class="memdesc:a7b24680115001871c5270a6a67435908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request permission to sign one or more messages.  <a href="signing_8h.html#a7b24680115001871c5270a6a67435908">More...</a><br /></td></tr>
-<tr class="separator:a7b24680115001871c5270a6a67435908"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67432df83914aace018975aeac992b57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a67432df83914aace018975aeac992b57">xmss_sign_message</a> (<a class="el" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> **restrict signature, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict key_context, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *restrict message)</td></tr>
-<tr class="memdesc:a67432df83914aace018975aeac992b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a signature for a message.  <a href="signing_8h.html#a67432df83914aace018975aeac992b57">More...</a><br /></td></tr>
-<tr class="separator:a67432df83914aace018975aeac992b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a06410d88bf1df1b92d0ea8aa4e3ab1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a0a06410d88bf1df1b92d0ea8aa4e3ab1">xmss_partition_signature_space</a> (<a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **new_partition, <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **updated_current_partition, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, const uint32_t new_partition_size)</td></tr>
-<tr class="memdesc:a0a06410d88bf1df1b92d0ea8aa4e3ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition a private key into two private keys.  <a href="signing_8h.html#a0a06410d88bf1df1b92d0ea8aa4e3ab1">More...</a><br /></td></tr>
-<tr class="separator:a0a06410d88bf1df1b92d0ea8aa4e3ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b5c1a46bf0bdf2776ac870274a7090"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090">xmss_request_future_signatures</a> (<a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **new_key_usage, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, uint32_t signature_count)</td></tr>
+<tr class="memdesc:af8b5c1a46bf0bdf2776ac870274a7090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request permission to sign one or more messages.  <a href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090">More...</a><br /></td></tr>
+<tr class="separator:af8b5c1a46bf0bdf2776ac870274a7090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24567ab632cdc8a51937832274872790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a24567ab632cdc8a51937832274872790">xmss_sign_message</a> (<a class="el" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> **signature, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *message)</td></tr>
+<tr class="memdesc:a24567ab632cdc8a51937832274872790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a signature for a message.  <a href="signing_8h.html#a24567ab632cdc8a51937832274872790">More...</a><br /></td></tr>
+<tr class="separator:a24567ab632cdc8a51937832274872790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fa12b5f0aa765849552dcba6158781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#aa3fa12b5f0aa765849552dcba6158781">xmss_partition_signature_space</a> (<a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **new_partition, <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **updated_current_partition, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, uint32_t new_partition_size)</td></tr>
+<tr class="memdesc:aa3fa12b5f0aa765849552dcba6158781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition a private key into two private keys.  <a href="signing_8h.html#aa3fa12b5f0aa765849552dcba6158781">More...</a><br /></td></tr>
+<tr class="separator:aa3fa12b5f0aa765849552dcba6158781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67e09960f385ab757074fcb755a3dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#ab67e09960f385ab757074fcb755a3dfc">xmss_merge_signature_space</a> (<a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **new_key_usage, <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context, const <a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> *partition_extension)</td></tr>
 <tr class="memdesc:ab67e09960f385ab757074fcb755a3dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge two partitions of a private key into one private key partition.  <a href="signing_8h.html#ab67e09960f385ab757074fcb755a3dfc">More...</a><br /></td></tr>
 <tr class="separator:ab67e09960f385ab757074fcb755a3dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04483f1dd42b56a0f72ab701311d8fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#ac04483f1dd42b56a0f72ab701311d8fe">xmss_get_signature_count</a> (size_t *total_count, size_t *remaining_count, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
 <tr class="memdesc:ac04483f1dd42b56a0f72ab701311d8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of signatures that can still be created with a private key partition.  <a href="signing_8h.html#ac04483f1dd42b56a0f72ab701311d8fe">More...</a><br /></td></tr>
 <tr class="separator:ac04483f1dd42b56a0f72ab701311d8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afedd2e7ad598f9b1d91aa22ebe0655e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#afedd2e7ad598f9b1d91aa22ebe0655e3">xmss_verify_public_key</a> (const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *restrict pub_key, const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *restrict private_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict key_context)</td></tr>
-<tr class="memdesc:afedd2e7ad598f9b1d91aa22ebe0655e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the validity and integrity of a public key blob.  <a href="signing_8h.html#afedd2e7ad598f9b1d91aa22ebe0655e3">More...</a><br /></td></tr>
-<tr class="separator:afedd2e7ad598f9b1d91aa22ebe0655e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5fe4941f1e1f8f7e5d77877dd42917"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a6c5fe4941f1e1f8f7e5d77877dd42917">xmss_verify_public_key</a> (const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *pub_key, const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *private_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
+<tr class="memdesc:a6c5fe4941f1e1f8f7e5d77877dd42917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the validity and integrity of a public key blob.  <a href="signing_8h.html#a6c5fe4941f1e1f8f7e5d77877dd42917">More...</a><br /></td></tr>
+<tr class="separator:a6c5fe4941f1e1f8f7e5d77877dd42917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2997dfbd5100afe5c64155f57c5e2ec3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a2997dfbd5100afe5c64155f57c5e2ec3">xmss_verify_private_key_stateless</a> (const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *private_key, const <a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *context)</td></tr>
 <tr class="memdesc:a2997dfbd5100afe5c64155f57c5e2ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the validity and integrity of a stateless private key part.  <a href="signing_8h.html#a2997dfbd5100afe5c64155f57c5e2ec3">More...</a><br /></td></tr>
 <tr class="separator:a2997dfbd5100afe5c64155f57c5e2ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,18 +198,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a753ccd064d7230dcc3d40a77e860954e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a753ccd064d7230dcc3d40a77e860954e">xmss_get_caching_in_public_key</a> (<a class="el" href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6">XmssCacheType</a> *cache_type, uint32_t *cache_level, const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *pub_key)</td></tr>
 <tr class="memdesc:a753ccd064d7230dcc3d40a77e860954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the level of the cache that is stored in a public key blob.  <a href="signing_8h.html#a753ccd064d7230dcc3d40a77e860954e">More...</a><br /></td></tr>
 <tr class="separator:a753ccd064d7230dcc3d40a77e860954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2488ce4b9b53671d25593cf832d8e2a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a2488ce4b9b53671d25593cf832d8e2a3">xmss_export_public_key</a> (<a class="el" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> **exported_pub_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
-<tr class="memdesc:a2488ce4b9b53671d25593cf832d8e2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the public key to an exportable format.  <a href="signing_8h.html#a2488ce4b9b53671d25593cf832d8e2a3">More...</a><br /></td></tr>
-<tr class="separator:a2488ce4b9b53671d25593cf832d8e2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c58e16b4a34a42f6bdb66d71bc839e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#a9c58e16b4a34a42f6bdb66d71bc839e3">xmss_verify_exported_public_key</a> (const <a class="el" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> *exported_pub_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
-<tr class="memdesc:a9c58e16b4a34a42f6bdb66d71bc839e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the correctness of an exported public key.  <a href="signing_8h.html#a9c58e16b4a34a42f6bdb66d71bc839e3">More...</a><br /></td></tr>
-<tr class="separator:a9c58e16b4a34a42f6bdb66d71bc839e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78053ba4ea594e01a2280b370991a2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#af78053ba4ea594e01a2280b370991a2c">xmss_export_public_key</a> (<a class="el" href="structXmssPublicKey.html">XmssPublicKey</a> *exported_pub_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
+<tr class="memdesc:af78053ba4ea594e01a2280b370991a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the public key to an exportable format.  <a href="signing_8h.html#af78053ba4ea594e01a2280b370991a2c">More...</a><br /></td></tr>
+<tr class="separator:af78053ba4ea594e01a2280b370991a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af231c361f3a8af28a4665ac7aa115316"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signing_8h.html#af231c361f3a8af28a4665ac7aa115316">xmss_verify_exported_public_key</a> (const <a class="el" href="structXmssPublicKey.html">XmssPublicKey</a> *exported_pub_key, const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context)</td></tr>
+<tr class="memdesc:af231c361f3a8af28a4665ac7aa115316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify the correctness of an exported public key.  <a href="signing_8h.html#af231c361f3a8af28a4665ac7aa115316">More...</a><br /></td></tr>
+<tr class="separator:af231c361f3a8af28a4665ac7aa115316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Public API for the XMSS signing library. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3b4174507bd46fa0ed2f9b564215fd16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b4174507bd46fa0ed2f9b564215fd16">&#9670;&nbsp;</a></span>xmss_calculate_public_key_part()</h2>
+<a id="a606eaa18a018d3be0379c0b5432b104e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606eaa18a018d3be0379c0b5432b104e">&#9670;&nbsp;</a></span>xmss_calculate_public_key_part()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +223,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>partition_index</em>&#160;</td>
         </tr>
         <tr>
@@ -235,30 +235,30 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Perform work on an ongoing public key calculation. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information on generating a public key.</dd></dl>
-<p>This function must be called exactly generation_partitions time to perform all the calculations on the public key. generation_partitions is set during the public key generation setup, in <a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information on generating a public key.</dd></dl>
+<p>This function must be called exactly <code>generation_partitions</code> time to perform all the calculations on the public key. <code>generation_partitions</code> is set during the public key generation setup, in <a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">generation_buffer</td><td>The work-in-progress public key that calculations will be done for. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">partition_index</td><td>The partition number, running from 0 to generation_partitions - 1, for which the calculations will be done. Each partition index must be used exactly once. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partition_index</td><td>The partition number, running from 0 to <code>generation_partitions</code> - 1, for which the calculations will be done. Each <code>partition_index</code> must be used exactly once. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_ARGUMENT</td><td>partition_index is out of range for the passed generation_buffer. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_PARTITION_DONE</td><td>The generation partition indicated by partition_index has already been started. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a15ad08bcbcb2efc3d333906b01f8265d" title="The value of an argument was invalid.">XMSS_ERR_INVALID_ARGUMENT</a></td><td><code>partition_index</code> is out of range for the passed generation_buffer. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8ab4595970e2716b976f4fab660db603cc" title="The calculations for the key generation partition were already performed.">XMSS_ERR_PARTITION_DONE</a></td><td>The generation partition indicated by <code>partition_index</code> has already been started. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ad2e2848dabf7611508fc43544898d6a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2e2848dabf7611508fc43544898d6a4">&#9670;&nbsp;</a></span>xmss_context_initialize()</h2>
+<a id="a33651e16538a16e69984b82d7dbda45c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33651e16538a16e69984b82d7dbda45c">&#9670;&nbsp;</a></span>xmss_context_initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_context_initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *restrict *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> **&#160;</td>
           <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
@@ -302,10 +302,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize a new instantiation of the signature key and generation library. </p>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 Memory Management</h1>
-<p>The library needs to allocate and deallocate memory during several calls. The user of the library must provide a realloc() and free() implementation. This allows, for example, an implementation that does not use any dynamic memory allocations. If dynamic memory allocation is available on the target platform, then one can simply pass the standard C library implementations.</p>
-<p>Whenever a function in this library has a pointer-to-pointer-to-struct parameter, it will allocate memory for that structure using the provided pointer's initial value as input pointer to realloc(). For every pointer-to-pointer-to-struct parameter a single call to realloc() will be made.</p>
+<p>The library needs to allocate and deallocate memory during several calls. The user of the library must provide a <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> and <a class="el" href="types_8h.html#a50031a0fdc84760a9e99a09177b1cc3b" title="A function to deallocate memory.">XmssFreeFunction</a> implementation. This allows, for example, an implementation that does not use any dynamic memory allocations. If dynamic memory allocation is available on the target platform, then one can simply pass the standard C library implementations for <code>realloc()</code> and <code>free()</code>.</p>
+<p>Whenever a function in this library has a pointer-to-pointer-to-struct parameter, it will allocate memory for that structure using the provided pointer's initial value as input pointer to the user-provided <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a>. For every pointer-to-pointer-to-struct parameter a single call to the user-provided <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> will be made.</p>
 <div class="fragment"><div class="line"><a class="code" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *key_context = NULL;</div>
 <div class="line"><a class="code" href="signing_8h.html#afef767631bb2e33d902a600792210955">xmss_load_private_key</a>(&amp;key_context, private_key, key_usage, context);</div>
 <div class="line"><span class="comment">// This would perform one call to realloc(NULL, XMSS_KEY_CONTEXT_SIZE).</span></div>
@@ -316,47 +316,47 @@ Memory Management</h1>
 <div class="ttc" id="aopaque__structures_8h_html_ac2142060c066596fcb772046b57d3762"><div class="ttname"><a href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a></div><div class="ttdeci">struct XmssKeyContext XmssKeyContext</div><div class="ttdoc">Context for using the signature generation part of the library, with a loaded private key partition.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:123</div></div>
 <div class="ttc" id="asigning_8h_html_afef767631bb2e33d902a600792210955"><div class="ttname"><a href="signing_8h.html#afef767631bb2e33d902a600792210955">xmss_load_private_key</a></div><div class="ttdeci">XmssError xmss_load_private_key(XmssKeyContext **key_context, const XmssPrivateKeyStatelessBlob *private_key, const XmssPrivateKeyStatefulBlob *key_usage, const XmssSigningContext *context)</div><div class="ttdoc">Load a private key partition from storage.</div></div>
 </div><!-- fragment --><p>Allocated memory returned via a pointer-to-pointer-to-struct parameter changes ownership to the caller: the caller is responsible for its deallocation. This can be done implicitly by a later call to a library function that explicitly promises to deallocate the memory, or by explicitly calling the correct deallocation function for the type.</p>
-<p>Deallocating memory is only done by library calls when explicitly mentioned, for example by <a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>, and by the structure deallocation functions. If memory needs to be deallocated, free() will be called once with a non-NULL argument for every structure that needs to be deallocated.</p>
-<p>Non-standard implementations for realloc() and free() can be used to create a library instantiation that only uses static memory allocations.</p>
+<p>Deallocating memory is only done by library calls when explicitly mentioned, for example by <a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>, and by the structure deallocation functions. If memory needs to be deallocated, the user-provided <a class="el" href="types_8h.html#a50031a0fdc84760a9e99a09177b1cc3b" title="A function to deallocate memory.">XmssFreeFunction</a> will be called once with a non-NULL argument for every structure that needs to be deallocated.</p>
+<p>Non-standard implementations for <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> and <a class="el" href="types_8h.html#a50031a0fdc84760a9e99a09177b1cc3b" title="A function to deallocate memory.">XmssFreeFunction</a> can be used to create a library instantiation that only uses static memory allocations.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> *static_realloc(<span class="keywordtype">void</span> *ptr, <span class="keywordtype">size_t</span> size) { <span class="keywordflow">return</span> ptr; }</div>
 <div class="line"><span class="keywordtype">void</span> static_free(<span class="keywordtype">void</span> *ptr) {}</div>
 <div class="line"> </div>
 <div class="line">uint8_t context[<a class="code" href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a">XMSS_SIGNING_CONTEXT_SIZE</a>];</div>
 <div class="line"><a class="code" href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a> *context_ptr = context;</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="signing_8h.html#ad2e2848dabf7611508fc43544898d6a4">xmss_context_initialize</a>(&amp;context_ptr, parameter_set, &amp;static_realloc, &amp;static_free, NULL);</div>
+<div class="line"><a class="code" href="signing_8h.html#a33651e16538a16e69984b82d7dbda45c">xmss_context_initialize</a>(&amp;context_ptr, parameter_set, &amp;static_realloc, &amp;static_free, NULL);</div>
 <div class="line"><span class="comment">// Because static_realloc is passed as the realloc argument, the previously allocated context is &#39;reallocated&#39;</span></div>
 <div class="line"><span class="comment">// by calling the static_realloc function, which does nothing. No dynamic memory is used.</span></div>
 <div class="line"><span class="comment">// The XMSS_SIGNING_CONTEXT_SIZE macro allows allocating memory for the structure, even though its contents are</span></div>
 <div class="line"><span class="comment">// opaque and its size unknown to the caller.</span></div>
 <div class="ttc" id="aopaque__structures_8h_html_a19005ce7ba72d44afed3bd4440ea1a7a"><div class="ttname"><a href="opaque__structures_8h.html#a19005ce7ba72d44afed3bd4440ea1a7a">XMSS_SIGNING_CONTEXT_SIZE</a></div><div class="ttdeci">#define XMSS_SIGNING_CONTEXT_SIZE</div><div class="ttdoc">The size in bytes of an XmssSigningContext.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:43</div></div>
 <div class="ttc" id="aopaque__structures_8h_html_a6f9fe5dfbb1de622189cfce139efb767"><div class="ttname"><a href="opaque__structures_8h.html#a6f9fe5dfbb1de622189cfce139efb767">XmssSigningContext</a></div><div class="ttdeci">struct XmssSigningContext XmssSigningContext</div><div class="ttdoc">The context of an instantiation of the signing library.</div><div class="ttdef"><b>Definition:</b> opaque_structures.h:37</div></div>
-<div class="ttc" id="asigning_8h_html_ad2e2848dabf7611508fc43544898d6a4"><div class="ttname"><a href="signing_8h.html#ad2e2848dabf7611508fc43544898d6a4">xmss_context_initialize</a></div><div class="ttdeci">XmssError xmss_context_initialize(XmssSigningContext *restrict *restrict context, XmssParameterSetOID parameter_set, XmssReallocFunction custom_realloc, XmssFreeFunction custom_free, XmssZeroizeFunction zeroize)</div><div class="ttdoc">Initialize a new instantiation of the signature key and generation library.</div></div>
+<div class="ttc" id="asigning_8h_html_a33651e16538a16e69984b82d7dbda45c"><div class="ttname"><a href="signing_8h.html#a33651e16538a16e69984b82d7dbda45c">xmss_context_initialize</a></div><div class="ttdeci">XmssError xmss_context_initialize(XmssSigningContext **context, XmssParameterSetOID parameter_set, XmssReallocFunction custom_realloc, XmssFreeFunction custom_free, XmssZeroizeFunction zeroize)</div><div class="ttdoc">Initialize a new instantiation of the signature key and generation library.</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">context</td><td>The context required for further use of the library. This will only point to a fully initialized signing context upon success. Upon failure this will point to NULL and any memory allocated during this function's execution has been freed again. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">parameter_set</td><td>The XMSS parameter set that this library instantiation will support. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">custom_realloc</td><td>The library will use this function to allocate memory needed for new structures. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">custom_free</td><td>The library will use this function to deallocate previously allocated memory. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">zeroize</td><td>If this is not NULL, the library will use this function to erase sensitive data. Special care must be taken to select a function that can not be optimized away by the compiler. No such function exists in pure C99, so the default implementation represents a best-effort solution that is known to work on almost all compilers. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zeroize</td><td>If this is not NULL, the library will use this function to erase sensitive data. Special care must be taken to select a function that can not be optimized away by the compiler. No such function exists in pure C99, but the default implementation offers a best-effort solution that is known to work on almost all compilers. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>context, custom_realloc, or custom_free is NULL. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_ARGUMENT</td><td>An unsupported parameter set is specified. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td><code>context</code>, <code>custom_realloc</code>, or <code>custom_free</code> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a15ad08bcbcb2efc3d333906b01f8265d" title="The value of an argument was invalid.">XMSS_ERR_INVALID_ARGUMENT</a></td><td>An unsupported parameter set is specified. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a2488ce4b9b53671d25593cf832d8e2a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2488ce4b9b53671d25593cf832d8e2a3">&#9670;&nbsp;</a></span>xmss_export_public_key()</h2>
+<a id="af78053ba4ea594e01a2280b370991a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78053ba4ea594e01a2280b370991a2c">&#9670;&nbsp;</a></span>xmss_export_public_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +364,7 @@ Memory Management</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_export_public_key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssPublicKey.html">XmssPublicKey</a> *&#160;</td>
           <td class="paramname"><em>exported_pub_key</em>, </td>
         </tr>
         <tr>
@@ -385,19 +385,18 @@ Memory Management</h1>
 <p>The internal format contains features like integrity checking. This function will export the public key to the format specified by RFC 8391 Section 4.1.7.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">exported_pub_key</td><td>The exported public key. </td></tr>
-    <tr><td class="paramname">key_context</td><td>The private key to export the public key from. A public key must have been loaded or generated for this private key. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">exported_pub_key</td><td>The exported public key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>The private key to export the public key from. A public key must have been loaded or generated for this private key. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NO_PUBLIC_KEY</td><td>key_context does not have a public key loaded. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8aaa65985c41cd11598a8e97c472cc216c" title="The key context does not have a public key loaded.">XMSS_ERR_NO_PUBLIC_KEY</a></td><td><code>key_context</code> does not have a public key loaded. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -437,33 +436,33 @@ Memory Management</h1>
 </div><div class="memdoc">
 
 <p>Finalize calculation on a public key. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information on generating a public key.</dd></dl>
-<p>This function will gather all the work done in the separate <a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> calls and combine them to form the public key, possibly performing the last few steps.</p>
-<p>Calling this function before each required call to <a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> has finished is an error.</p>
-<p>On success, generation_buffer and generation_cache will be deallocated.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information on generating a public key.</dd></dl>
+<p>This function will gather all the work done in the separate <a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> calls and combine them to form the public key, possibly performing the last few steps.</p>
+<p>Calling this function before each required call to <a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> has finished is an error.</p>
+<p>On success, <code>generation_buffer</code> and <code>generation_cache</code> will be deallocated.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">public_key</td><td>The blob with the public key and cache. It is recommended to store this blob for later use. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">generation_buffer</td><td>The work-in-progress public key for which the calculations will be finalized. Part of this buffer will be moved to key_context, the rest will be deallocated. The value of the pointer will be set to NULL to reflect this. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">generation_buffer</td><td>The work-in-progress public key for which the calculations will be finalized. Part of this buffer will be moved to <code>key_context</code>, the rest will be deallocated. The value of the pointer will be set to NULL to reflect this. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>The private key for which these calculations are being done. This context will be updated to have the newly generated public key loaded. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_UNFINISHED_PARTITIONS</td><td>Not all generation partitions' calculations have been finished. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a2031a6f08a1196cb2cea247e5526f9e9" title="Not all key generation partition calculations were completed.">XMSS_ERR_UNFINISHED_PARTITIONS</a></td><td>Not all generation partitions' calculations have been finished. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afaa8963dc29966db6c06efe849e20f04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaa8963dc29966db6c06efe849e20f04">&#9670;&nbsp;</a></span>xmss_generate_private_key()</h2>
+<a id="a7ca94f25a7db0c94b0c284989c094071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca94f25a7db0c94b0c284989c094071">&#9670;&nbsp;</a></span>xmss_generate_private_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +494,7 @@ Memory Management</h1>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c">XmssIndexObfuscationSetting</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c">XmssIndexObfuscationSetting</a>&#160;</td>
           <td class="paramname"><em>index_obfuscation_setting</em>, </td>
         </tr>
         <tr>
@@ -521,8 +520,8 @@ Memory Management</h1>
 <p>Generate a new private key. </p>
 <p>After the private key has been generated the returned blobs should immediately be stored in a secure location and (securely) wiped from memory.</p>
 <p>A newly generated private key is a single partition that covers the entire key's signature space.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a0a06410d88bf1df1b92d0ea8aa4e3ab1" title="Partition a private key into two private keys.">xmss_partition_signature_space</a> for more information on private key partitions.</dd></dl>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#aa3fa12b5f0aa765849552dcba6158781" title="Partition a private key into two private keys.">xmss_partition_signature_space()</a> for more information on private key partitions.</dd></dl>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Index Obfuscation</h1>
 <p>Index obfuscation, if enabled, is part of the private key. A vital part of XMSS' security is preventing double use of the same key. This is normally done by keeping track of the last used index, but with index obfuscation this is less trivial. Making the obfuscation a part of the private key ensures that used index tracking remains secure.</p>
 <p>To initialize the index obfuscation random data is required. It is not a problem if not enough random data of the highest quality is available: index obfuscation is not a security feature but mere obfuscation. If only lower quality random is available, that is fine. Whatever random is used, it MUST be completely separate from the secure random that is used to generate the private key itself.</p>
@@ -530,30 +529,30 @@ Index Obfuscation</h1>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">key_context</td><td>The context required for further use of the library with this key. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">private_key</td><td>The stateless part of the private key. This must be stored in a secure location. It will never change. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">key_usage</td><td>The stateful part of the private key. This must be stored in a secure location. It must be possible to update the key_usage in its secure storage location every time signatures need to be created. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">key_usage</td><td>The stateful part of the private key. This must be stored in a secure location. It must be possible to update the <code>key_usage</code> in its secure storage location every time signatures need to be created. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">secure_random</td><td>Must contain 96 bytes of cryptographically secure random data. These random bytes will be used to generate the secure parts of the private key. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">index_obfuscation_setting</td><td>Selects whether or not index obfuscation will be used for the key. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">random</td><td>Random data for initialization of the index obfuscation. If index obfuscation is enabled, then this needs to contain 32 bytes of random data. If index_obfuscation is set to XMSS_INDEX_OBFUSCATION_OFF, then this parameter is ignored and may be NULL. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>The initialized context of the library. This must be initialized for the parameter set that was used to create the private key. After <a class="el" href="signing_8h.html#afef767631bb2e33d902a600792210955" title="Load a private key partition from storage.">xmss_load_private_key()</a> successfully returns this context may be deallocated: only key_context is needed for further use of the library. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">random</td><td>Random data for initialization of the index obfuscation. If index obfuscation is enabled, then this needs to contain 32 bytes of random data. If <code>index_obfuscation_setting</code> is <a class="el" href="types_8h.html#adb4dd79f0a19cd8169d8c597591ac42caac9d81203866e988755dbef5b636c358" title="No index obfuscation.">XMSS_INDEX_OBFUSCATION_OFF</a>, then this parameter is ignored and may be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>The initialized context of the library. This must be initialized for the parameter set that was used to create the private key. After <a class="el" href="signing_8h.html#afef767631bb2e33d902a600792210955" title="Load a private key partition from storage.">xmss_load_private_key()</a> successfully returns this context may be deallocated: only <code>key_context</code> is needed for further use of the library. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_ARGUMENT</td><td>An invalid index_obfuscation_setting is passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a15ad08bcbcb2efc3d333906b01f8265d" title="The value of an argument was invalid.">XMSS_ERR_INVALID_ARGUMENT</a></td><td>An invalid <code>index_obfuscation_setting</code> is passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a58121a033eacf0bcca3234cca6b6bdbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58121a033eacf0bcca3234cca6b6bdbf">&#9670;&nbsp;</a></span>xmss_generate_public_key()</h2>
+<a id="a9f3e2e4231b275cd48102fbdeb4197fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f3e2e4231b275cd48102fbdeb4197fb">&#9670;&nbsp;</a></span>xmss_generate_public_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -585,19 +584,19 @@ Index Obfuscation</h1>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6">XmssCacheType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#a956fe873140d1fe0acae33aba4f9e1a6">XmssCacheType</a>&#160;</td>
           <td class="paramname"><em>cache_type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>cache_level</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>generation_partitions</em>&#160;</td>
         </tr>
         <tr>
@@ -610,14 +609,14 @@ Index Obfuscation</h1>
 
 <p>Set up the process of generating the public key. </p>
 <p>During the calculation of the public key a cache is immediately created, as well.</p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 Public Key Generation in Multiple Parts</h1>
-<p>Generating the public key is split into three parts to allow tracking progress and utilizing multiple cores. The first part is the setup, using <a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>. During setup a division of the work is chosen, the number of partitions that need to be generated. Then during the second step each of those partitions is executed separately, via calls to <a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a>. This is where the majority of all calculations is done. Finally, after all partitions' work has been finished, the final result can be calculated by calling <a class="el" href="signing_8h.html#aca0507dfa8d9b4a875ae982f7f53c283" title="Finalize calculation on a public key.">xmss_finish_calculate_public_key()</a>.</p>
+<p>Generating the public key is split into three parts to allow tracking progress and utilizing multiple cores. The first part is the setup, using <a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a>. During setup a division of the work is chosen, the number of partitions that need to be generated. Then during the second step each of those partitions is executed separately, via calls to <a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a>. This is where the majority of all calculations is done. Finally, after all partitions' work has been finished, the final result can be calculated by calling <a class="el" href="signing_8h.html#aca0507dfa8d9b4a875ae982f7f53c283" title="Finalize calculation on a public key.">xmss_finish_calculate_public_key()</a>.</p>
 <p>The division into multiple partitions allows tracking progress by tracking how many partitions have finished. With 1024 partitions, each partition is just under 0.1% of the work, which is excellent for something like a progress bar. Dividing the work into multiple partitions also allows using multiple cores for the calculations: each partition's calculations are entirely independent from the others, so it is inherently safe to run the calculations for several partitions in parallel.</p>
-<p>When no calculations are being processed, for example when some of the <a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> calls have finished and all the others have not yet been started, the process of calculating the public key can be aborted by simply deallocating the key generation context.</p>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<p>When no calculations are being processed, for example when some of the <a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> calls have finished and all the others have not yet been started, the process of calculating the public key can be aborted by simply deallocating the key generation context.</p>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Caching types</h1>
-<p>Two different types of caching can be employed. The type to use is passed in the cache_type parameter. The effects of the cache depends on the cache level. Single level caching will cache the nodes at only that level, whereas top caching will also cache the nodes between that level and the root. Top caching can be considered the cumulative version of single level caching, adding one more level of cache as the level decreases whereas single level caching simply caches the next level.</p>
+<p>Two different types of caching can be employed. The type to use is passed in the <code>cache_type</code> parameter. The effects of the cache depends on the cache level. Single level caching will cache the nodes at only that level, whereas top caching will also cache the nodes between that level and the root. Top caching can be considered the cumulative version of single level caching, adding one more level of cache as the level decreases whereas single level caching simply caches the next level.</p>
 <p>To compare the two, the table below summarizes which levels' nodes are cached for a given cache level. Note that $h$ is the height of the tree.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -633,27 +632,27 @@ Caching types</h1>
 </table>
 <p>The trade-off is between memory usage and computation time when generating a signature. Compared to single level caching, top caching uses roughly twice the amount of memory and storage, but offers an ever greater speed-up of signature generation as the cache level decreases. For cache levels close to $h$, the difference in speed-up is negligible, but when the cache level is $h/2$ top caching reduces the computation time by almost twice as much as single level caching. If the cache level is 0, this increases to (almost) a factor $2^h$.</p>
 <p>Despite their differences, either cache type greatly speeds up the signature generation process compared to not using any cache.</p>
-<p>If memory and storage are not constrained, top caching with minimum cache level is advised. It requires roughly 64MiB of memory and public key storage for cache level 0.</p>
+<p>If memory and storage are not constrained, top caching with minimum cache level is advised. For a tree height $h = 20$, it requires roughly 64 MiB of memory and public key storage for cache level 0.</p>
 <p>Using a cache does not impact the exported public key: the cache is only stored in the <a class="el" href="structXmssPublicKeyInternalBlob.html" title="A stored public key for the signing library.">XmssPublicKeyInternalBlob</a>, the internal, extended format for a public key.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">generation_buffer</td><td>The work-in-progress public key. This context contains all the (temporary) data needed to calculate the entire public key and any requested cache layer. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">cache</td><td>A pointer to the initial pointer to pass to realloc() to allocate memory for a cache to be loaded. If a cache is to be generated, this argument's contents will be set to NULL; the allocated cache is made part of the key generation context, instead. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">generation_cache</td><td>A pointer to the initial pointer to pass to realloc() to allocate memory for the temporary cache needed while generating the public key. This argument's contents will be set to NULL when the temporary cache is allocated: it will be made part of the key generation context, instead. For static allocation, the size can be determined with <a class="el" href="opaque__structures_8h.html#a99cf35c00e238f04bff7191b33190b86">XMSS_PUBLIC_KEY_GENERATION_CACHE_SIZE</a>. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cache</td><td>A pointer to the initial pointer to pass to the user-provided <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> to allocate memory for a cache to be loaded. If a cache is to be generated, this argument's contents will be set to NULL; the allocated cache is made part of the key generation context, instead. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">generation_cache</td><td>A pointer to the initial pointer to pass to the user-provided <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> to allocate memory for the temporary cache needed while generating the public key. This argument's contents will be set to NULL when the temporary cache is allocated: it will be made part of the key generation context, instead. For static allocation, the size can be determined with <a class="el" href="opaque__structures_8h.html#a99cf35c00e238f04bff7191b33190b86" title="The size in bytes of the XmssInternalCache public key generation cache.">XMSS_PUBLIC_KEY_GENERATION_CACHE_SIZE</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>The context with the private key for which the public will be calculated. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cache_type</td><td>The type of caching to use. Top caching is advised unless memory or storage is constrained. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cache_level</td><td>The layer for which a cache should be created, where 0 is the bottom layer of the tree and the highest layer (which is the public key itself) would be equal to the tree depth (10, 16 or 20, depending on the XMSS parameter set that is used). Valid cache levels must be smaller than the tree depth, though, since a cache of only the public key itself makes no sense. A cache at the lowest level is highly recommended for performance, at the expense of some additional memory and storage used for the public key blob (not the exportable public key). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">generation_partitions</td><td>The number of partitions to divide the work in. If set to 1, a single call to xmss_calculate_public_key_part will calculate the entire public key. Set to any higher power of 2 (at most 2^tree depth), calculating the public key will require as many calls to <a class="el" href="signing_8h.html#a3b4174507bd46fa0ed2f9b564215fd16" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> to calculate (most of) the public key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">generation_partitions</td><td>The number of partitions to divide the work in. If set to 1, a single call to xmss_calculate_public_key_part will calculate the entire public key. Set to any higher power of 2 (at most 2^tree depth), calculating the public key will require as many calls to <a class="el" href="signing_8h.html#a606eaa18a018d3be0379c0b5432b104e" title="Perform work on an ongoing public key calculation.">xmss_calculate_public_key_part()</a> to calculate (most of) the public key. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_ARGUMENT</td><td>An invalid cache_type is passed, cache_level is out of range or generation_partitions is out of range or not a power of 2. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a15ad08bcbcb2efc3d333906b01f8265d" title="The value of an argument was invalid.">XMSS_ERR_INVALID_ARGUMENT</a></td><td>An invalid <code>cache_type</code> is passed, <code>cache_level</code> is out of range or <code>generation_partitions</code> is out of range or not a power of 2. </td></tr>
   </table>
   </dd>
 </dl>
@@ -696,18 +695,18 @@ Caching types</h1>
 <p>This function is primarily to support implementations with advanced memory management.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cache_type</td><td>The type of cache as found in the public key blob. </td></tr>
-    <tr><td class="paramname">cache_level</td><td>The cache level as found in the public key blob. </td></tr>
-    <tr><td class="paramname">pub_key</td><td>The public key blob to query. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cache_type</td><td>The type of cache as found in the public key blob. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cache_level</td><td>The cache level as found in the public key blob. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pub_key</td><td>The public key blob to query. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in pub_key is not valid. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in <code>pub_key</code> is not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -747,8 +746,8 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>The number of signatures that can still be created with a private key partition. </p>
-<p>Signatures that have already been requested with <a class="el" href="signing_8h.html#a7b24680115001871c5270a6a67435908" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a> but have not yet been created with <a class="el" href="signing_8h.html#a67432df83914aace018975aeac992b57" title="Create a signature for a message.">xmss_sign_message()</a> are <em>not</em> shown in the number returned by this function.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a0a06410d88bf1df1b92d0ea8aa4e3ab1" title="Partition a private key into two private keys.">xmss_partition_signature_space</a> for more information about private key partitions.</dd></dl>
+<p>Signatures that have already been requested with <a class="el" href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a> but have not yet been created with <a class="el" href="signing_8h.html#a24567ab632cdc8a51937832274872790" title="Create a signature for a message.">xmss_sign_message()</a> are <em>not</em> shown in the number returned by this function.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#aa3fa12b5f0aa765849552dcba6158781" title="Partition a private key into two private keys.">xmss_partition_signature_space()</a> for more information about private key partitions.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">total_count</td><td>The total number of signatures that can be created by the key in its entirety. </td></tr>
@@ -759,10 +758,10 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected; note that not all bit errors will be detected. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected; note that not all bit errors will be detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -811,8 +810,8 @@ Caching types</h1>
 <p>A private key is stored in two parts, the stateless part and the stateful part. Both parts are required to be able to use the key.</p>
 <p>When the private key partition has successfully been loaded, the blobs should be (securely) erased from memory. This prevents possible misuse that could lead to fatal key reuse.</p>
 <p>Loading the private key is not sufficient to be able to generate signatures. The public key must also be loaded or generated.</p>
-<p>This function is bit error resilient in that a singe random bit error cannot cause it to load an invalid private key, a stateful part that does not correspond to the stateless part, or a private key with a parameter set that does not match context.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a0a06410d88bf1df1b92d0ea8aa4e3ab1" title="Partition a private key into two private keys.">xmss_partition_signature_space</a> for more information on private key partitions.</dd></dl>
+<p>This function is bit error resilient in that a singe random bit error cannot cause it to load an invalid private key, a stateful part that does not correspond to the stateless part, or a private key with a parameter set that does not match <code>context</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#aa3fa12b5f0aa765849552dcba6158781" title="Partition a private key into two private keys.">xmss_partition_signature_space()</a> for more information on private key partitions.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">key_context</td><td>The context required for further use of the library with this key. </td></tr>
@@ -824,21 +823,21 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>private_key does not contain a private key that was generated for the parameter set for which context was initialized, or the data in private_key and key_usage is not part of the same private key. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in private_key or key_usage is not valid. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td><code>private_key</code> does not contain a private key that was generated for the parameter set for which context was initialized, or the data in <code>private_key</code> and <code>key_usage</code> is not part of the same private key. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in <code>private_key</code> or <code>key_usage</code> is not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a5bee0f9ea0bae9d69aef3b1d24b8b17b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bee0f9ea0bae9d69aef3b1d24b8b17b">&#9670;&nbsp;</a></span>xmss_load_public_key()</h2>
+<a id="a54ef51fd627268a940fe8226cb670ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ef51fd627268a940fe8226cb670ba3">&#9670;&nbsp;</a></span>xmss_load_public_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -846,19 +845,19 @@ Caching types</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_load_public_key </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#a827cd2ee8c7b4b3030386957ec5f9ffc">XmssInternalCache</a> **&#160;</td>
           <td class="paramname"><em>cache</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *&#160;</td>
           <td class="paramname"><em>key_context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *restrict&#160;</td>
+          <td class="paramtype">const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *&#160;</td>
           <td class="paramname"><em>public_key</em>&#160;</td>
         </tr>
         <tr>
@@ -872,12 +871,12 @@ Caching types</h1>
 <p>Load a public key from storage. </p>
 <p>The public key is stored and loaded separately from the private key. Both the private key and the public key are required to generate signatures. They are stored separately both to allow using different storage and because the public key can be regenerated if it is lost.</p>
 <p>The public key also includes a previously generated cache, which greatly speeds up signature generation.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a58121a033eacf0bcca3234cca6b6bdbf" title="Set up the process of generating the public key.">xmss_generate_public_key</a> for more information about caching</dd></dl>
-<p>If public_key contains caching data, <a class="el" href="signing_8h.html#a5bee0f9ea0bae9d69aef3b1d24b8b17b" title="Load a public key from storage.">xmss_load_public_key()</a> will load the cache structure in cache and add it to the context. If public_key does not contain any cache, cache's value will be changed to point to NULL. Static memory implementations that do not know the size of the cache up front can pass a preallocated cache buffer of size <a class="el" href="opaque__structures_8h.html#a46066c28d0c02154271c3da082789807" title="The size in bytes of an XmssInternalCache.">XMSS_INTERNAL_CACHE_SIZE(tree_depth)</a> to accommodate all possible caches.</p>
-<p>This function is bit error resilient in that a single random bit error cannot cause it to load an invalid public key or a valid public key that does not match key_context.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="signing_8h.html#a9f3e2e4231b275cd48102fbdeb4197fb" title="Set up the process of generating the public key.">xmss_generate_public_key()</a> for more information about caching.</dd></dl>
+<p>If public_key contains caching data, <a class="el" href="signing_8h.html#a54ef51fd627268a940fe8226cb670ba3" title="Load a public key from storage.">xmss_load_public_key()</a> will load the cache structure in cache and add it to the context. If public_key does not contain any cache, cache's value will be changed to point to NULL. Static memory implementations that do not know the size of the cache up front can pass a preallocated cache buffer of size <a class="el" href="opaque__structures_8h.html#a46066c28d0c02154271c3da082789807" title="The size in bytes of an XmssInternalCache.">XMSS_INTERNAL_CACHE_SIZE(tree_depth)</a> to accommodate all possible caches.</p>
+<p>This function is bit error resilient in that a single random bit error cannot cause it to load an invalid public key or a valid public key that does not match <code>key_context</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">cache</td><td>A pointer to the initial pointer to pass to realloc() to allocate memory for a cache to be loaded. If a cache is indeed loaded, this argument's contents will be set to NULL; the allocated cache is made part of the key context, instead. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cache</td><td>A pointer to the initial pointer to pass to the user-provided <a class="el" href="types_8h.html#af1a9e34490d717c8cc713157697d750c" title="A function to reallocate memory.">XmssReallocFunction</a> to allocate memory for a cache to be loaded. If a cache is indeed loaded, this argument's contents will be set to NULL; the allocated cache is made part of the key context, instead. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>The context with the loaded private key for which the public key is to be loaded. The context will be updated with the loaded public key and cache. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">public_key</td><td>The public key. This must be a valid <a class="el" href="structXmssPublicKeyInternalBlob.html" title="A stored public key for the signing library.">XmssPublicKeyInternalBlob</a>. </td></tr>
   </table>
@@ -885,13 +884,13 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>public_key does not contain the public key for the private key that was loaded in key_context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in public_Key is not valid. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td><code>public_key</code> does not contain the public key for the private key that was loaded in <code>key_context</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in <code>public_key</code> is not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -946,21 +945,21 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in partition_extension is not valid. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_PARTITIONS_NOT_CONSECUTIVE</td><td>The private key partition in partition_extension is not consecutive with the private key partition in key_context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in partition_extension is not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a16f1e53b876ddee456d03d5a3a42a58a" title="Partitions are not consecutive.">XMSS_ERR_PARTITIONS_NOT_CONSECUTIVE</a></td><td>The private key partition in <code>partition_extension</code> is not consecutive with the private key partition in <code>key_context</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a0a06410d88bf1df1b92d0ea8aa4e3ab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a06410d88bf1df1b92d0ea8aa4e3ab1">&#9670;&nbsp;</a></span>xmss_partition_signature_space()</h2>
+<a id="aa3fa12b5f0aa765849552dcba6158781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fa12b5f0aa765849552dcba6158781">&#9670;&nbsp;</a></span>xmss_partition_signature_space()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -986,7 +985,7 @@ Caching types</h1>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>new_partition_size</em>&#160;</td>
         </tr>
         <tr>
@@ -999,11 +998,11 @@ Caching types</h1>
 
 <p>Partition a private key into two private keys. </p>
 <p>A private key should never be backed up by just copying the securely stored files. Recovering using an offline backup that is a copy of a private key that has been in use is almost guaranteed to lead to fatal key reuse. Backups can be created by dividing the private key into multiple partitions. The stateless parts of the two partitioned private keys remain the same, but their stateful parts ensure that key reuse can't occur.</p>
-<p>Partitioning a private key creates a second key usage blob which can create new_partition_size signatures, and adjusts the loaded private key so it will no longer be able to place those same signatures.</p>
+<p>Partitioning a private key creates a second key usage blob which can create <code>new_partition_size</code> signatures, and adjusts the loaded private key so it will no longer be able to place those same signatures.</p>
 <p>A successful partitioning will also result in a new blob for the stateful part of the currently loaded private key. This blob MUST be stored in secure storage, overwriting any previous blobs for the stateful part of this private key, and (securely) erased from memory. Only when storing this blob has been ensured may the new partition be stored and used. Storing or using the new partition before storing the new private key data, or only partially performing the store procedure, can lead to fatal key reuse.</p>
 <p>After the private key has been partitioned and the new blob for the stateful part of the currently loaded private key has been stored, the returned blob for the stateful part of the new partition should immediately be stored in a secure location. It should be (securely) wiped from memory afterwards, even if either blob can't be stored.</p>
-<p>New partitions are created from the end of the signature space, whereas requests to create signatures are taken from the beginning. A proper backup scheme, which can utilize use <a class="el" href="signing_8h.html#ab67e09960f385ab757074fcb755a3dfc" title="Merge two partitions of a private key into one private key partition.">xmss_merge_signature_space()</a> to extend the current private key with a part of the backups when the time comes, first creates the last backup partition, then the second-to-last, and so on, every time decreasing the current private key a bit more, making it the first (and presumably active) partition. As long as only the lowest partition is used, two consecutive partitions will be able to be merged.</p>
-<p>A single bit error cannot cause this function to generate new partitions that exceed the bounds of the previous signature space, or to produce new partitions with overlap. However, a bit error in new_partition_size can still cause the resulting new partitions to have incorrect sizes. The size of the new partitions must be checked before overwriting the old.</p>
+<p>New partitions are created from the end of the signature space, whereas requests to create signatures are taken from the beginning. A proper backup scheme, which can utilize <a class="el" href="signing_8h.html#ab67e09960f385ab757074fcb755a3dfc" title="Merge two partitions of a private key into one private key partition.">xmss_merge_signature_space()</a> to extend the current private key with a part of the backups when the time comes, first creates the last backup partition, then the second-to-last, and so on, every time decreasing the current private key a bit more, making it the first (and presumably active) partition. As long as only the lowest partition is used, two consecutive partitions will be able to be merged.</p>
+<p>A single bit error cannot cause this function to generate new partitions that exceed the bounds of the previous signature space, or to produce new partitions with overlap. However, a bit error in <code>new_partition_size</code> can still cause the resulting new partitions to have incorrect sizes. The size of the new partitions must be checked before overwriting the old.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">new_partition</td><td>The blob with the stateful part of the new partition's private key. </td></tr>
@@ -1015,20 +1014,20 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</td><td>The private key context contains less than new_partition_size unused keys. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected; note that not all bit errors will be detected. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a56c34c17a3d3992f3297483a7f2caa90" title="There are not enough signatures available to allow the operation.">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</a></td><td>The private key context contains less than <code>new_partition_size</code> unused keys. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected; note that not all bit errors will be detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7b24680115001871c5270a6a67435908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b24680115001871c5270a6a67435908">&#9670;&nbsp;</a></span>xmss_request_future_signatures()</h2>
+<a id="af8b5c1a46bf0bdf2776ac870274a7090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b5c1a46bf0bdf2776ac870274a7090">&#9670;&nbsp;</a></span>xmss_request_future_signatures()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1036,19 +1035,19 @@ Caching types</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_request_future_signatures </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssPrivateKeyStatefulBlob.html">XmssPrivateKeyStatefulBlob</a> **&#160;</td>
           <td class="paramname"><em>new_key_usage</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *&#160;</td>
           <td class="paramname"><em>key_context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>signature_count</em>&#160;</td>
         </tr>
         <tr>
@@ -1060,10 +1059,10 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>Request permission to sign one or more messages. </p>
-<p>Permission will only be granted if the private key partition still contains the requested amount of unused keys. Signatures that are requested must be used in the same session using <a class="el" href="signing_8h.html#a67432df83914aace018975aeac992b57" title="Create a signature for a message.">xmss_sign_message()</a> or they will be lost.</p>
+<p>Permission will only be granted if the private key partition still contains the requested amount of unused keys. Signatures that are requested must be used in the same session using <a class="el" href="signing_8h.html#a24567ab632cdc8a51937832274872790" title="Create a signature for a message.">xmss_sign_message()</a> or they will be lost.</p>
 <p>A successful request will result in a new blob for the stateful part of the private key partition. This blob MUST be stored in secure storage, overwriting any previous blobs for the stateful part of this private key partition, and (securely) erased from memory. Only when storing this blob has been ensured may the signatures be used. Signing messages before storing the new private key data, or only partially performing the store procedure, can lead to fatal key reuse.</p>
 <p>The library is written such that a single random bit error cannot cause this function to reserve more signatures than available. It is still possible for a bit error to cause an incorrect number of signatures to be claimed. Before overwriting the stateful blob, check that the correct number of signatures is available, and if not, abort.</p>
-<p>Calling xmss_request_future_signatures repeatedly will not cause previously requested but unused signatures to be lost, but will simply increase the number of allowed signatures.</p>
+<p>Calling <a class="el" href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a> repeatedly will not cause previously requested but unused signatures to be lost, but will simply increase the number of allowed signatures.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">new_key_usage</td><td>The blob with the new stateful private key part. </td></tr>
@@ -1074,21 +1073,21 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</td><td>The private key partition does not contain signature_count unused keys. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NO_PUBLIC_KEY</td><td>key_context does not have a public key loaded. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a56c34c17a3d3992f3297483a7f2caa90" title="There are not enough signatures available to allow the operation.">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</a></td><td>The private key partition does not contain <code>signature_count</code> unused keys. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8aaa65985c41cd11598a8e97c472cc216c" title="The key context does not have a public key loaded.">XMSS_ERR_NO_PUBLIC_KEY</a></td><td><code>key_context</code> does not have a public key loaded. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a67432df83914aace018975aeac992b57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67432df83914aace018975aeac992b57">&#9670;&nbsp;</a></span>xmss_sign_message()</h2>
+<a id="a24567ab632cdc8a51937832274872790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24567ab632cdc8a51937832274872790">&#9670;&nbsp;</a></span>xmss_sign_message()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1096,19 +1095,19 @@ Caching types</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_sign_message </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> **restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> **&#160;</td>
           <td class="paramname"><em>signature</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict&#160;</td>
+          <td class="paramtype"><a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *&#160;</td>
           <td class="paramname"><em>key_context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *restrict&#160;</td>
+          <td class="paramtype">const <a class="el" href="structXmssBuffer.html">XmssBuffer</a> *&#160;</td>
           <td class="paramname"><em>message</em>&#160;</td>
         </tr>
         <tr>
@@ -1120,7 +1119,7 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>Create a signature for a message. </p>
-<p>This function will only create signatures after a call to <a class="el" href="signing_8h.html#a7b24680115001871c5270a6a67435908" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a>, after which at most signature_count calls to xmss_sign_message can succeed.</p>
+<p>This function will only create signatures after a call to <a class="el" href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a>, after which at most <code>signature_count</code> calls to <a class="el" href="signing_8h.html#a24567ab632cdc8a51937832274872790" title="Create a signature for a message.">xmss_sign_message()</a> can succeed.</p>
 <p>The library is written in such a way that a single random bit error cannot cause this function to output a signature that re-uses a one-time signature key. A single bit error can still cause it to output an invalid signature, in which case all reserved signature go to waste. However, the integrity of previous or future signatures is not compromised.</p>
 <p>The signature produced by this function must be verified before publishing it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1133,21 +1132,21 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ALLOC_ERROR</td><td>Memory allocation caused an error. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</td><td>No additional signatures can be created without calling xmss_request_future_signatures first. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NO_PUBLIC_KEY</td><td>key_context does not have a public key loaded. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected; note that not all bit errors will be detected.. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839" title="An error occurred with memory allocation.">XMSS_ERR_ALLOC_ERROR</a></td><td>Memory allocation caused an error. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a56c34c17a3d3992f3297483a7f2caa90" title="There are not enough signatures available to allow the operation.">XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE</a></td><td>No additional signatures can be created without calling <a class="el" href="signing_8h.html#af8b5c1a46bf0bdf2776ac870274a7090" title="Request permission to sign one or more messages.">xmss_request_future_signatures()</a> first. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8aaa65985c41cd11598a8e97c472cc216c" title="The key context does not have a public key loaded.">XMSS_ERR_NO_PUBLIC_KEY</a></td><td><code>key_context</code> does not have a public key loaded. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected; note that not all bit errors will be detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a9c58e16b4a34a42f6bdb66d71bc839e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c58e16b4a34a42f6bdb66d71bc839e3">&#9670;&nbsp;</a></span>xmss_verify_exported_public_key()</h2>
+<a id="af231c361f3a8af28a4665ac7aa115316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af231c361f3a8af28a4665ac7aa115316">&#9670;&nbsp;</a></span>xmss_verify_exported_public_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1155,7 +1154,7 @@ Caching types</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_verify_exported_public_key </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structXmssPublicKey.html">XmssPublicKey</a> *&#160;</td>
           <td class="paramname"><em>exported_pub_key</em>, </td>
         </tr>
         <tr>
@@ -1176,19 +1175,18 @@ Caching types</h1>
 <p>The exportable format does not contain any form of integrity checking. With this function the correctness can be verified.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">exported_pub_key</td><td>The exported public key to verify. </td></tr>
-    <tr><td class="paramname">key_context</td><td>The private key to verify the public key against. A public key must have been loaded or generated for this private key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exported_pub_key</td><td>The exported public key to verify. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>The private key to verify the public key against. A public key must have been loaded or generated for this private key. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in exported_pub_key is not valid. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NO_PUBLIC_KEY</td><td>key_context does not have a public key loaded. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>exported_pub_key seems to be a valid exported public key, but is not the same public key as is loaded in key_context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8aaa65985c41cd11598a8e97c472cc216c" title="The key context does not have a public key loaded.">XMSS_ERR_NO_PUBLIC_KEY</a></td><td><code>key_context</code> does not have a public key loaded. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td><code>exported_pub_key</code> seems to be a valid exported public key, but is not the same public key as is loaded in key_context. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1234,24 +1232,24 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>Verify the validity and integrity of a stateful private key partition part. </p>
-<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output XMSS_OKAY. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
+<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output <a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a>. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key_usage</td><td>The stateful private key part to verify. </td></tr>
-    <tr><td class="paramname">private_key</td><td>A stateless private key part to verify against. Providing this verifies that the two private key part are part of the same private key. May be NULL. </td></tr>
-    <tr><td class="paramname">key_context</td><td>A private key to verify against. Providing this verifies that the stateful private key part corresponds to the stateless private key in the key_context. May be NULL if and only if signing_context is non-NULL. </td></tr>
-    <tr><td class="paramname">signing_context</td><td>The signing context, required to perform a verification operation. May be NULL if and only if key_context is non-NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_usage</td><td>The stateful private key part to verify. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">private_key</td><td>A stateless private key part to verify against. Providing this verifies that the two private key part are part of the same private key. May be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_context</td><td>A private key to verify against. Providing this verifies that the stateful private key part corresponds to the stateless private key in the <code>key_context</code>. May be NULL if and only if <code>signing_context</code> is non-NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signing_context</td><td>The signing context, required to perform a verification operation. May be NULL if and only if key_context is non-NULL. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>key_usage is NULL, or if both key_context and signing_context are NULL. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>private_key was passed and key_usage does not contain stateful data that corresponds to the private key contained in private_key, or key_context was passed and key_usage does not contain stateful data that corresponds to the private key loaded in key_context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in pub_key is not valid or private_key is passed and contains invalid data. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is passed and not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td><code>key_usage</code> is NULL, or if both <code>key_context</code> and <code>signing_context</code> are NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td><code>private_key</code> was passed and <code>key_usage</code> does not contain stateful data that corresponds to the private key contained in <code>private_key</code>, or <code>key_context</code> was passed and <code>key_usage</code> does not contain stateful data that corresponds to the private key loaded in <code>key_context</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in <code>pub_key</code> is not valid or <code>private_key</code> is passed and contains invalid data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is passed and not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
@@ -1285,29 +1283,29 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>Verify the validity and integrity of a stateless private key part. </p>
-<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output XMSS_OKAY. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
+<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output <a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a>. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">private_key</td><td>The private key part to verify. </td></tr>
-    <tr><td class="paramname">context</td><td>The signing context that's required for the verification. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">private_key</td><td>The private key part to verify. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>The signing context that's required for the verification. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>A NULL pointer was passed. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>private_key contains invalid data. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>The signing context was created for a different parameter set than the private key blob. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td>A NULL pointer was passed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td><code>private_key</code> contains invalid data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td>The signing context was created for a different parameter set than the private key blob. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="afedd2e7ad598f9b1d91aa22ebe0655e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afedd2e7ad598f9b1d91aa22ebe0655e3">&#9670;&nbsp;</a></span>xmss_verify_public_key()</h2>
+<a id="a6c5fe4941f1e1f8f7e5d77877dd42917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5fe4941f1e1f8f7e5d77877dd42917">&#9670;&nbsp;</a></span>xmss_verify_public_key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1315,19 +1313,19 @@ Caching types</h1>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> xmss_verify_public_key </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *restrict&#160;</td>
+          <td class="paramtype">const <a class="el" href="structXmssPublicKeyInternalBlob.html">XmssPublicKeyInternalBlob</a> *&#160;</td>
           <td class="paramname"><em>pub_key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *restrict&#160;</td>
+          <td class="paramtype">const <a class="el" href="structXmssPrivateKeyStatelessBlob.html">XmssPrivateKeyStatelessBlob</a> *&#160;</td>
           <td class="paramname"><em>private_key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *restrict&#160;</td>
+          <td class="paramtype">const <a class="el" href="opaque__structures_8h.html#ac2142060c066596fcb772046b57d3762">XmssKeyContext</a> *&#160;</td>
           <td class="paramname"><em>key_context</em>&#160;</td>
         </tr>
         <tr>
@@ -1339,7 +1337,7 @@ Caching types</h1>
 </div><div class="memdoc">
 
 <p>Verify the validity and integrity of a public key blob. </p>
-<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output XMSS_OKAY. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
+<p>This function is bit error resilient in that a single random bit error cannot cause it to wrongly output <a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a>. If a function checks the return value of this function and bit error resilience is required, the return value should be stored in a volatile variable which is then checked twice.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pub_key</td><td>The public key blob to verify. </td></tr>
@@ -1350,12 +1348,12 @@ Caching types</h1>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">XMSS_OKAY</td><td>Success. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_NULL_POINTER</td><td>pub_key is NULL. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_ARGUMENT_MISMATCH</td><td>private_key was passed and pub_key does not contain a public key that corresponds to the private key contained in private_key, or key_context was passed and pub_key does not contain a public key that corresponds to the private key loaded in key_context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_INVALID_BLOB</td><td>The data in pub_key is not valid or private_key is passed and contains invalid data. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BAD_CONTEXT</td><td>key_context is passed and is not a correctly initialized context. </td></tr>
-    <tr><td class="paramname">XMSS_ERR_BIT_ERROR_DETECTED</td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969" title="Success.">XMSS_OKAY</a></td><td>Success. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0" title="An unexpected NULL pointer was passed.">XMSS_ERR_NULL_POINTER</a></td><td><code>pub_key</code> is NULL. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679" title="A mismatch was detected between arguments.">XMSS_ERR_ARGUMENT_MISMATCH</a></td><td><code>private_key</code> was passed and <code>pub_key</code> does not contain a public key that corresponds to the private key contained in <code>private_key</code>, or <code>key_context</code> was passed and <code>pub_key</code> does not contain a public key that corresponds to the private key loaded in <code>key_context</code>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284" title="A blob structure was found to be invalid.">XMSS_ERR_INVALID_BLOB</a></td><td>The data in <code>pub_key</code> is not valid or <code>private_key</code> is passed and contains invalid data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8afc77b1116832b3aebf747a87fe50ddc7" title="The passed context is in an incorrect state.">XMSS_ERR_BAD_CONTEXT</a></td><td><code>key_context</code> is passed and is not a correctly initialized context. </td></tr>
+    <tr><td class="paramname"><a class="el" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91" title="A fault was detected.">XMSS_ERR_FAULT_DETECTED</a></td><td>A bit error was detected. (Note that bit errors can also cause different errors or segfaults.) </td></tr>
   </table>
   </dd>
 </dl>

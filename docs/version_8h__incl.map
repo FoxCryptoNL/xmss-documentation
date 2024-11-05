@@ -1,0 +1,6 @@
+<map id="version.h" name="version.h">
+<area shape="rect" id="node1" title="Public API for XMSS library version control." alt="" coords="15,5,98,32"/>
+<area shape="rect" id="node2" href="$xmss__config_8h.html" title="The configurable CMake options that affect the public API." alt="" coords="13,155,127,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="21,80,92,107"/>
+<area shape="rect" id="node4" href="$compat_8h.html" title="C99 compatibility layer." alt="" coords="117,80,199,107"/>
+</map>

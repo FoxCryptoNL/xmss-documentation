@@ -125,18 +125,32 @@ $(document).ready(function(){initNavTree('signature-verification.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md3">Problem definition</a></li>
-<li class="level1"><a href="#autotoc_md4">Solution</a><ul><li class="level2"><a href="#autotoc_md5">Example: Simple verification</a></li>
-<li class="level2"><a href="#autotoc_md6">Example: Complex verification</a></li>
+<ul><li class="level1"><a href="#autotoc_md3">Problem definition: Streaming</a></li>
+<li class="level1"><a href="#autotoc_md4">Problem definition: Fault injection</a></li>
+<li class="level1"><a href="#autotoc_md5">Solution</a><ul><li class="level2"><a href="#autotoc_md6">Example: Simple verification</a></li>
+<li class="level2"><a href="#autotoc_md7">Example: Verification with resilience</a><ul><li class="level3"><a href="#autotoc_md8">Verification of small amounts of data</a></li>
+<li class="level3"><a href="#autotoc_md9">Verification of larger amounts of data</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md7">Conclusion</a></li>
+<li class="level2"><a href="#autotoc_md10">Example: Verification with streaming</a></li>
+<li class="level2"><a href="#autotoc_md11">Example: Complex verification with resilience and streaming</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#autotoc_md12">Conclusion</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_Ybiz_PBn_0_crypto_xmss_documentation_build_docs_0020_signature_verification"></a></p>
-<p>The API deliberately does not contain a direct <code>verify_signature</code> function, whereas many other cryptographic signature libraries do. This document explains why this is so; it also provides guidance on how to properly verify a signature in your code.</p>
+<p>The API for verifying a signature consists of three calls, <code>xmss_verification_init</code>, <code>xmss_verification_update</code> and <code>xmss_verification_check</code>. This document details their use and provides guidance on how to properly verify a signature in your code.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Despite the examples given in this document, it is beyond the scope of this XMSS library to provide a specific resilient implementation of signature verification; it depends on details of the underlying hardware. It also depends on implementation details of the compiler; optimizations usually need to be turned off and it matters if the branching is on a positive or on a negative verification result. The latter can sometimes be controlled by inverting the condition and using nested if-statements; some compilers support <code>__builtin_expect</code> to control the branching strategy.</dd>
+<dd>
+In all cases it is necessary to inspect the final assembly code to confirm that the required level of resilience is achieved.</dd></dl>
 <h1><a class="anchor" id="autotoc_md3"></a>
-Problem definition</h1>
+Problem definition: Streaming</h1>
+<p>A hypothetical, straightforward API for verifying a signature could be: </p><pre class="fragment">bool xmss_verify_signature(XmssPublicKey *public_key, XmssSignature *signature, uint8_t *data, size_t data_size);
+</pre><p> A major drawback of this API would be that all data would need to be loaded in memory before the signature can be verified. For both the signature and the public key this is not a problem, but the data that has been signed is of variable size. It could be only a few hundred bytes, it could be in the order of gibibytes. The latter case will provide a challenge to lots of systems.</p>
+<p>To prevent this memory issue the verification API is streaming: the data can be offered in chunks rather than in one go, allowing the memory footprint of the verification to remain small irrespective of the size of the data to verify.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Problem definition: Fault injection</h1>
 <p>Different products require different levels of resilience against sophisticated attacks. Although an XMSS signature is very secure, the verification method itself could possibly be bypassed. Security products require a proper security architecture to prevent bypasses of a security function. We identify the following fault injections that an attacker could use to attempt to bypass signature verification:</p>
 <ul>
 <li><p class="startli">bit errors</p>
@@ -147,74 +161,324 @@ Problem definition</h1>
 </li>
 </ul>
 <p>Furthermore, some products want to employ <a class="el" href="public-key-obfuscation.html">Public key obfuscation</a> while others do not.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Solution</h1>
-<p>The API allows for all scenarios, supporting both the most resilient products as well as those that require a minimum size instead. This is illustrated in the following two examples.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<p>The API allows for all scenarios, supporting both the most resilient products as well as those that require a minimum size instead. This is illustrated in the following examples.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Example: Simple verification</h2>
-<p>If your product requires neither resilience nor obfuscation, then a possible implementation could be:</p>
+<p>If your product does not require resilience or streaming, then a possible implementation could be:</p>
 <div class="fragment"><div class="line"><span class="comment">// NOTE: no bit error resilience</span></div>
 <div class="line"><span class="comment">// NOTE: no instruction skip resilience</span></div>
-<div class="line"><span class="comment">// NOTE: no public key obfuscation</span></div>
-<div class="line"><span class="keywordtype">bool</span> verify_signature(<span class="keyword">const</span> <a class="code" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssBuffer.html">XmssBuffer</a> *message, <span class="keyword">const</span> <a class="code" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> *signature)</div>
+<div class="line"><span class="comment">// NOTE: not streaming</span></div>
+<div class="line"><span class="keywordtype">bool</span> verify_signature(<span class="keyword">const</span> <a class="code" href="structXmssPublicKey.html">XmssPublicKey</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssSignature.html">XmssSignature</a> *signature, <span class="keywordtype">size_t</span> signature_length,</div>
+<div class="line">                      <span class="keyword">const</span> uint8_t *data, <span class="keywordtype">size_t</span> data_length)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code" href="structXmssValue256.html">XmssValue256</a> expected_public_key;</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e">xmss_calculate_expected_public_key</a>(&amp;expected_public_key, message, public_key, signature) != XMSS_OK)</div>
+<div class="line">    <a class="code" href="unionXmssVerificationContext.html">XmssVerificationContext</a> context = { 0 };</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a>(&amp;context, public_key, signature, signature_length) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> memcmp(expected_public_key, public_key-&gt;<a class="code" href="structXmssPublicKeyBlob.html#acf302ba00024a2dab3536df3569567fb">data</a>.<a class="code" href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">public_key</a>, <span class="keyword">sizeof</span>(<a class="code" href="structXmssValue256.html">XmssValue256</a>)) == 0;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, data, data_length, NULL) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="astructXmssBuffer_html"><div class="ttname"><a href="structXmssBuffer.html">XmssBuffer</a></div><div class="ttdoc">A pointer to a buffer with a given size.</div><div class="ttdef"><b>Definition:</b> types.h:304</div></div>
-<div class="ttc" id="astructXmssPublicKeyBlob_html"><div class="ttname"><a href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a></div><div class="ttdoc">Structure containing the size and the public key formatted for export.</div><div class="ttdef"><b>Definition:</b> structures.h:158</div></div>
-<div class="ttc" id="astructXmssPublicKeyBlob_html_acf302ba00024a2dab3536df3569567fb"><div class="ttname"><a href="structXmssPublicKeyBlob.html#acf302ba00024a2dab3536df3569567fb">XmssPublicKeyBlob::data</a></div><div class="ttdeci">XmssPublicKey data</div><div class="ttdoc">Public key in the format described by RFC 8391, Section 4.1.7.</div><div class="ttdef"><b>Definition:</b> structures.h:168</div></div>
-<div class="ttc" id="astructXmssPublicKey_html_aee99ff5be8b08fabf8c53263cd9af072"><div class="ttname"><a href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">XmssPublicKey::public_key</a></div><div class="ttdeci">XmssValue256 public_key</div><div class="ttdoc">The public key root.</div><div class="ttdef"><b>Definition:</b> structures.h:134</div></div>
-<div class="ttc" id="astructXmssSignatureBlob_html"><div class="ttname"><a href="structXmssSignatureBlob.html">XmssSignatureBlob</a></div><div class="ttdoc">Structure that embeds the exportable format for a signature, along with the signature's data size.</div><div class="ttdef"><b>Definition:</b> structures.h:224</div></div>
-<div class="ttc" id="astructXmssValue256_html"><div class="ttname"><a href="structXmssValue256.html">XmssValue256</a></div><div class="ttdoc">A generic 256-bit value, represented as a byte stream.</div><div class="ttdef"><b>Definition:</b> types.h:254</div></div>
-<div class="ttc" id="averification_8h_html_a70e68b3b9e69d04dc4654c02bfa1993e"><div class="ttname"><a href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e">xmss_calculate_expected_public_key</a></div><div class="ttdeci">XmssError xmss_calculate_expected_public_key(XmssValue256 *restrict expected_public_key, const XmssBuffer *restrict msg, const XmssPublicKeyBlob *restrict pub_key, const XmssSignatureBlob *restrict signature)</div><div class="ttdoc">Calculate the expected public key for a given message and signature.</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
-Example: Complex verification</h2>
-<p>If your product requires both resilience and obfuscation, then a possible implementation could be:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> execute_with_verify(<span class="keyword">const</span> <a class="code" href="structXmssPublicKeyBlob.html">XmssPublicKeyBlob</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssBuffer.html">XmssBuffer</a> *message, <span class="keyword">const</span> <a class="code" href="structXmssSignatureBlob.html">XmssSignatureBlob</a> *signature)</div>
+<div class="ttc" id="astructXmssPublicKey_html"><div class="ttname"><a href="structXmssPublicKey.html">XmssPublicKey</a></div><div class="ttdoc">Exportable format for a public key.</div><div class="ttdef"><b>Definition:</b> structures.h:126</div></div>
+<div class="ttc" id="astructXmssSignature_html"><div class="ttname"><a href="structXmssSignature.html">XmssSignature</a></div><div class="ttdoc">Exportable format for a signature.</div><div class="ttdef"><b>Definition:</b> structures.h:160</div></div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a></div><div class="ttdeci">@ XMSS_OKAY</div><div class="ttdoc">Success.</div><div class="ttdef"><b>Definition:</b> types.h:114</div></div>
+<div class="ttc" id="aunionXmssVerificationContext_html"><div class="ttname"><a href="unionXmssVerificationContext.html">XmssVerificationContext</a></div><div class="ttdoc">The context for signature verification.</div><div class="ttdef"><b>Definition:</b> structures.h:267</div></div>
+<div class="ttc" id="averification_8h_html_a1a4ea7ae36af9eb2f89d4927afbe5cc0"><div class="ttname"><a href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a></div><div class="ttdeci">XmssError xmss_verification_update(XmssVerificationContext *context, const uint8_t *part, size_t part_length, const uint8_t *volatile *part_verify)</div><div class="ttdoc">Update the verification context with the next chunk of the message.</div></div>
+<div class="ttc" id="averification_8h_html_a74d72af5d5362d12f7536ac6dcf21f38"><div class="ttname"><a href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a></div><div class="ttdeci">XmssError xmss_verification_init(XmssVerificationContext *context, const XmssPublicKey *public_key, const XmssSignature *signature, size_t signature_length)</div><div class="ttdoc">Initialize a context for signature verification.</div></div>
+<div class="ttc" id="averification_8h_html_a98b217de5429db4ef2dd3b5c3af77fa6"><div class="ttname"><a href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a></div><div class="ttdeci">XmssError xmss_verification_check(XmssVerificationContext *context, const XmssPublicKey *public_key)</div><div class="ttdoc">Perform a single validation of the message signature.</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+Example: Verification with resilience</h2>
+<p>Utilizing the resilience against bit errors and instruction skipping requires using the verification API in a way that is itself also resilient against those fault injections. Additionally, the data pointer verification of the <code>xmss_verification_update</code> function needs to be utilized to detect pointer manipulation.</p>
+<p>To provide resilience against bit errors and instruction skipping the underlying XMSS machinery needs to be called twice for different blocks. In practice this means that the caller must ensure that (a) <code>xmss_verification_update</code> is called twice with a non-zero chunk length and (b) at least one call to <code>xmss_verification_update</code> is at least as large as a complete block for the hashing function that is being used. For SHA2-256 this is 64 bytes, for SHAKE256 this is 136 bytes. The <code>verify_signature_big</code> example demonstrates a simple way to perform this step.</p>
+<p>For data sizes up to the size of a complete block for the hash function that is being used, it is required to perform the entire verification procedure twice. The data can then be passed using a single call to <code>xmss_verification_update</code> and the requirement to call that function twice is fulfilled by calling the entire procedure twice. This is demonstrated in the <code>verify_signature_small</code> example.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Verification of small amounts of data</h3>
+<p>If small amounts of data need to be verified, it is easiest to simply verify the data twice. Call <code>verify_signature_small</code> twice and if both calls return <code>true</code> then the signature is correct.</p>
+<div class="fragment"><div class="line"><span class="comment">// This implementation is itself also resilient against a single upset</span></div>
+<div class="line"><span class="comment">// NOTE: Must be called and checked twice with the same arguments to provide resilience</span></div>
+<div class="line"><span class="comment">// NOTE: Not streaming</span></div>
+<div class="line"><span class="keywordtype">bool</span> verify_signature_small(<span class="keyword">const</span> <a class="code" href="structXmssPublicKey.html">XmssPublicKey</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssSignature.html">XmssSignature</a> *signature, <span class="keywordtype">size_t</span> signature_length,</div>
+<div class="line">                            <span class="keyword">const</span> uint8_t *data, <span class="keywordtype">size_t</span> data_length)</div>
 <div class="line">{</div>
-<div class="line">    <a class="code" href="structXmssValue256.html">XmssValue256</a> expected_public_key;</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e">xmss_calculate_expected_public_key</a>(&amp;expected_public_key, message, public_key, signature) != XMSS_OK)</div>
+<div class="line">    <a class="code" href="unionXmssVerificationContext.html">XmssVerificationContext</a> context = { 0 };</div>
+<div class="line">    <span class="keyword">const</span> uint8_t *data_check = NULL;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a>(&amp;context, public_key, signature, signature_length) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="comment">// verification error</span></div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line"><span class="preprocessor">    #pragma optimize(off)</span></div>
-<div class="line">    <span class="keywordflow">if</span> (constant_time_equals(expected_public_key, public_key-&gt;<a class="code" href="structXmssPublicKeyBlob.html#acf302ba00024a2dab3536df3569567fb">data</a>.<a class="code" href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">public_key</a>, <span class="keyword">sizeof</span>(<a class="code" href="structXmssValue256.html">XmssValue256</a>)) != RESILIENT_TRUE)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, data, data_length, &amp;data_check) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="comment">// verification error</span></div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line">    execute_random_delay();</div>
-<div class="line">    <span class="keywordflow">if</span> (constant_time_equals(expected_public_key, public_key-&gt;<a class="code" href="structXmssPublicKeyBlob.html#acf302ba00024a2dab3536df3569567fb">data</a>.<a class="code" href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">public_key</a>, <span class="keyword">sizeof</span>(<a class="code" href="structXmssValue256.html">XmssValue256</a>)) != RESILIENT_TRUE)</div>
+<div class="line">    <span class="keywordflow">if</span> (data_check != data)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="comment">// verification error</span></div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="comment">// Pointer manipulation detected</span></div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line">    execute_random_delay();</div>
-<div class="line">    <span class="keywordflow">if</span> (constant_time_equals(expected_public_key, public_key-&gt;<a class="code" href="structXmssPublicKeyBlob.html#acf302ba00024a2dab3536df3569567fb">data</a>.<a class="code" href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">public_key</a>, <span class="keyword">sizeof</span>(<a class="code" href="structXmssValue256.html">XmssValue256</a>)) != RESILIENT_TRUE)</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
 <div class="line">    {</div>
-<div class="line">        <span class="comment">// verification error</span></div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
-<div class="line"><span class="preprocessor">    #pragma optimize(restore)</span></div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">// perform operations that require successful verification below this point</span></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>In this example, the comparison is done with constant time to obfuscate the public key. The example relies on a pre-existing function <code>constant_time_equals</code>. The function <code>constant_time_equals</code> is assumed to return bit error resilient truth values.</p>
-<p>In this example, the comparison is done three times with some delay in between, relying on a pre-existing function <code>execute_random_delay</code>. An attacker that attempts to skip instructions must successfully execute at least three well-timed attacks. Note that an attacker may also try to skip the <code>execute_random_delay</code> call itself; further hardening by unfolding the delay operation is possible.</p>
-<p>Note that the most time consuming operation, <a class="el" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e" title="Calculate the expected public key for a given message and signature.">xmss_calculate_expected_public_key()</a>, is called only once, even for this resilient implementation, because an incorrect value in <code>expected_public_key</code> will only lead to verification errors. If, on the other hand, the implementation would have had to call <code>verify_signature</code> multiple times, efficiency would be reduced.</p>
-<p>It is beyond the scope of this XMSS library to provide a specific resilient implementation of signature verification; it depends on details of the underlying hardware. It also depends on implementation details of the compiler; optimizations usually need to be turned off and it matters if the branching is on a positive or on a negative verification result. The latter can sometimes be controlled by inverting the condition and using nested if-statements; some compilers support <code>__builtin_expect</code> to control the branching strategy.</p>
-<p>In all cases it is necessary to inspect the final assembly code to confirm that the required level of resilience is achieved.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Somewhere in your code:</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!verify_signature_small(public_key, signature, signature_length, data, <span class="keyword">sizeof</span>(data))) {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (!verify_signature_small(public_key, signature, signature_length, data, <span class="keyword">sizeof</span>(data))) {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Verification succeeded</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
+Verification of larger amounts of data</h3>
+<p>If larger amounts of data need to be verified, then performing the entire verification twice becomes costly. It is still possible to perform the verification in a resilient manner by checking all return values twice and by providing the data in at least two chunks. Care has to be taken, in this case, that the chunks are not empty: <code>verify_signature_big</code> is actually not entirely resilient if it is provided a <code>data_length</code> smaller than 2.</p>
+<p>Note the use of <code>XmssError</code> as the return type of <code>verify_signature_big</code> instead of plain <code>bool</code>: <code>bool</code> is vulnerable to single bit errors whereas the values of <code>XmssError</code> are chosen to be resilient against bit errors. It is still required to check the return value of <code>verify_signature_big</code> twice against <code>XMSS_OKAY</code> to ensure resilience against instruction skipping.</p>
+<p>This method requires that the data is at least twice the size of a complete block for the hash function that is used.</p>
+<div class="fragment"><div class="line"><span class="comment">// This implementation is itself also resilient against a single upset</span></div>
+<div class="line"><span class="comment">// NOTE: Not streaming</span></div>
+<div class="line"><a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> verify_signature_big(<span class="keyword">const</span> <a class="code" href="structXmssPublicKey.html">XmssPublicKey</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssSignature.html">XmssSignature</a> *signature, <span class="keywordtype">size_t</span> signature_length,</div>
+<div class="line">                               <span class="keyword">const</span> uint8_t *data, <span class="keywordtype">size_t</span> data_length)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="unionXmssVerificationContext.html">XmssVerificationContext</a> context = { 0 };</div>
+<div class="line">    <span class="keyword">const</span> uint8_t *data_check = NULL;</div>
+<div class="line">    <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">size_t</span> first_half = data_length / 2;</div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a>(&amp;context, public_key, signature, signature_length);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, data, first_half, &amp;data_check);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (data_check != data)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Pointer manipulation detected</span></div>
+<div class="line">        <span class="comment">// This check is performed only once: if the check would fail then a single upset has already occurred. Skipping</span></div>
+<div class="line">        <span class="comment">// the check would be a second upset.</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91">XMSS_ERR_FAULT_DETECTED</a>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, data + first_half, data_length - first_half, &amp;data_check);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (data_check != data + first_half)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Pointer manipulation detected</span></div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91">XMSS_ERR_FAULT_DETECTED</a>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Somewhere in your code:</span></div>
+<div class="line">    <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = verify_signature_big(public_key, signature, signature_length, data, <span class="keyword">sizeof</span>(data));</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Verification succeeded</span></div>
+<div class="line">}</div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a></div><div class="ttdeci">XmssError</div><div class="ttdoc">The return codes for the functions in the XMSS library.</div><div class="ttdef"><b>Definition:</b> types.h:103</div></div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a></div><div class="ttdeci">@ XMSS_UNINITIALIZED</div><div class="ttdoc">Function returned prematurely.</div><div class="ttdef"><b>Definition:</b> types.h:168</div></div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91">XMSS_ERR_FAULT_DETECTED</a></div><div class="ttdeci">@ XMSS_ERR_FAULT_DETECTED</div><div class="ttdoc">A fault was detected.</div><div class="ttdef"><b>Definition:</b> types.h:159</div></div>
+</div><!-- fragment --><p>At the end of this example the <code>xmss_verification_check</code> function is called twice. Each of these calls will cause the result of the verification to be checked against the public key. If fault injection resilience is required, then this should be performed at least twice.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Example: Verification with streaming</h2>
+<p>If your products needs to verify large amounts of data or simply wishes to keep the memory footprint of the verification small, then providing the data to the verification API in chunks is advised.</p>
+<div class="fragment"><div class="line"><span class="comment">// NOTE: no bit error resilience</span></div>
+<div class="line"><span class="comment">// NOTE: no instruction skip resilience</span></div>
+<div class="line"><span class="keywordtype">bool</span> verify_signature_streaming(<span class="keyword">const</span> <a class="code" href="structXmssPublicKey.html">XmssPublicKey</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssSignature.html">XmssSignature</a> *signature,</div>
+<div class="line">                                <span class="keywordtype">size_t</span> signature_length, <span class="keyword">const</span> <span class="keywordtype">char</span> *data_file)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="unionXmssVerificationContext.html">XmssVerificationContext</a> context = { 0 };</div>
+<div class="line">    uint8_t buffer[1024] = { 0 };</div>
+<div class="line">    FILE *fp = NULL;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a>(&amp;context, public_key, signature, signature_length) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    fp = fopen(data_file, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (fp == NULL) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">do</span> {</div>
+<div class="line">        <span class="keywordtype">size_t</span> bytes_read = fread(buffer, 1, <span class="keyword">sizeof</span>(buffer), fp);</div>
+<div class="line">        <span class="keywordflow">if</span> (ferror(fp))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, buffer, bytes_read, NULL) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">while</span>(!feof(fp));</div>
+<div class="line">    <span class="keywordflow">if</span> (fclose(fp) != 0) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key) != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+Example: Complex verification with resilience and streaming</h2>
+<p>If your product requires resilience and also needs to verify large amounts of data, then the combination of code in <code>verify_signature_big</code> and <code>verify_signature_streaming</code> should be used. This is demonstrated in <code>verify_signature_complex</code>.</p>
+<div class="fragment"><div class="line"><a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> verify_signature_complex(<span class="keyword">const</span> <a class="code" href="structXmssPublicKey.html">XmssPublicKey</a> *public_key, <span class="keyword">const</span> <a class="code" href="structXmssSignature.html">XmssSignature</a> *signature,</div>
+<div class="line">                                   <span class="keywordtype">size_t</span> signature_length, <span class="keyword">const</span> <span class="keywordtype">char</span> *data_file)</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="unionXmssVerificationContext.html">XmssVerificationContext</a> context = { 0 };</div>
+<div class="line">    <span class="keyword">const</span> uint8_t *data_check = NULL;</div>
+<div class="line">    <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line">    <span class="comment">// 1088 is the lowest common multiple of the block sizes of both supported hash functions.</span></div>
+<div class="line">    uint8_t buffer[1088] = { 0 };</div>
+<div class="line">    FILE *fp = NULL;</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a74d72af5d5362d12f7536ac6dcf21f38">xmss_verification_init</a>(&amp;context, public_key, signature, signature_length);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    fp = fopen(data_file, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (fp == NULL) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d">XMSS_ERR_INVALID_SIGNATURE</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">do</span> {</div>
+<div class="line">        <span class="keywordtype">size_t</span> bytes_read = fread(buffer, 1, <span class="keyword">sizeof</span>(buffer), fp);</div>
+<div class="line">        <span class="keywordflow">if</span> (ferror(fp))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d">XMSS_ERR_INVALID_SIGNATURE</a>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        result = <a class="code" href="verification_8h.html#a1a4ea7ae36af9eb2f89d4927afbe5cc0">xmss_verification_update</a>(&amp;context, buffer, bytes_read, &amp;data_check);</div>
+<div class="line">        <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> result;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">return</span> result;</div>
+<div class="line">        }</div>
+<div class="line">        result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> (data_check != buffer)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="comment">// Pointer manipulation detected</span></div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91">XMSS_ERR_FAULT_DETECTED</a>;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">while</span>(!feof(fp));</div>
+<div class="line">    <span class="keywordflow">if</span> (fclose(fp) != 0) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d">XMSS_ERR_INVALID_SIGNATURE</a>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    result = <a class="code" href="verification_8h.html#a98b217de5429db4ef2dd3b5c3af77fa6">xmss_verification_check</a>(&amp;context, public_key);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">return</span> result;</div>
+<div class="line">    }</div>
+<div class="line">    result = <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb">XMSS_UNINITIALIZED</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Somewhere in your code:</span></div>
+<div class="line">    <span class="keyword">volatile</span> <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = verify_signature_complex(public_key, signature, signature_length, data_file);</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a>)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// Verification failed</span></div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// Verification succeeded</span></div>
+<div class="line">}</div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d">XMSS_ERR_INVALID_SIGNATURE</a></div><div class="ttdeci">@ XMSS_ERR_INVALID_SIGNATURE</div><div class="ttdoc">The signature is invalid.</div><div class="ttdef"><b>Definition:</b> types.h:120</div></div>
+</div><!-- fragment --><p>Note that this implementation requires the data to be at least twice the size of a block for the hash function that is used. An implementation that needs to support completely variable sized data should check the data size and call <code>verify_signature_small</code> rather than <code>verify_signature_complex</code> if the data is sufficiently small.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Conclusion</h1>
-<p>The API allows for both simple (without resilience) and complex (with hardware dependent resilience) signature verification. <a class="el" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e" title="Calculate the expected public key for a given message and signature.">xmss_calculate_expected_public_key()</a> is resilient by design, without internal complexity. The API also allows for public key obfuscation, while keeping the code size at a minimum for those products that do not require it. This means the XMSS library is compact, efficient, and secure.</p>
-<p>For simple verification, extending <a class="el" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e" title="Calculate the expected public key for a given message and signature.">xmss_calculate_expected_public_key()</a> to <code>verify_signature</code> is trivial.</p>
-<p>For complex verification, <a class="el" href="verification_8h.html#a70e68b3b9e69d04dc4654c02bfa1993e" title="Calculate the expected public key for a given message and signature.">xmss_calculate_expected_public_key()</a> needs to be called only once for efficiency. The exact details of a resilient comparison implementation is both hardware and compiler dependent, which is outside the scope of this XMSS library. </p>
+<p>The API allows the user to decide whether to use streaming for the data to be verified, and can be called in a manner that ensure resilience against bit errors or instruction skipping.</p>
+<p>The API calls are themselves resilient by design and only rely on the caller to detect pointer manipulation and to correctly verify their return values. The verification against the public key is performed by the API in a bit error resilient manner using constant time. This also ensures that no information about the public key is leaked, facilitating public key obfuscation.</p>
+<p>For straightforward verification, chaining the <code>xmss_verification_</code> family of calls in a single <code>verify_signature</code> is trivial.</p>
+<p>Offering the data in a streaming fashion can be done by using a loop to read the data and providing it to the verification API with repeated calls to <code>xmss_verification_update</code>.</p>
+<p>Fault injection resilient verification is a small extension to the calls and mainly requires care on the part of the caller to check all values and double-check certain result to prevent fault injection to succeed on their own code. The exact details of a resilient comparison implementation is both hardware and compiler dependent, which is outside the scope of this XMSS library. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

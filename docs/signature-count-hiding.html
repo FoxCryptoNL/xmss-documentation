@@ -125,33 +125,33 @@ $(document).ready(function(){initNavTree('signature-count-hiding.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md12">Problem definition</a></li>
-<li class="level1"><a href="#autotoc_md13">Index obfuscation</a><ul><li class="level2"><a href="#autotoc_md14">When to use index obfuscation</a></li>
-<li class="level2"><a href="#autotoc_md15">Implications of using index obfuscation</a></li>
-<li class="level2"><a href="#autotoc_md16">Impact on security</a></li>
-<li class="level2"><a href="#autotoc_md17">Impact on back-ups</a></li>
-<li class="level2"><a href="#autotoc_md18">Interoperability</a></li>
+<ul><li class="level1"><a href="#autotoc_md17">Problem definition</a></li>
+<li class="level1"><a href="#autotoc_md18">Index obfuscation</a><ul><li class="level2"><a href="#autotoc_md19">When to use index obfuscation</a></li>
+<li class="level2"><a href="#autotoc_md20">Implications of using index obfuscation</a></li>
+<li class="level2"><a href="#autotoc_md21">Impact on security</a></li>
+<li class="level2"><a href="#autotoc_md22">Impact on back-ups</a></li>
+<li class="level2"><a href="#autotoc_md23">Interoperability</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md19">Conclusion</a></li>
+<li class="level1"><a href="#autotoc_md24">Conclusion</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_Ybiz_PBn_0_crypto_xmss_documentation_build_docs_0050_signature_count_hiding"></a></p>
 <p>The key generation API allows to enable index obfuscation, which can help hide the number of signatures created with a private key. This document provides guidance for when to use index obfuscation and what the implications of enabling index obfuscation are.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Problem definition</h1>
 <p>Depending on the usage scenario, the number of signatures created using a private key may be considered sensitive information. In XMSS, each OTS key is denoted by it's index, and each OTS key may be used only once. The straight forward way of preventing index re-use is to store a counter value along with the other parts that comprise the private key. In that case, someone in possession of one signature also knows the exact number of signatures generated at the time of signing. Since OTS re-use compromises the security of a private key, picking a random index is not a solution, however it is possible to select an index using a pseudo-random permutation of the index space.</p>
 <p>Naturally, the upper limit on the number of signatures that can be generated with a single private key cannot be obfuscated as that information is required to be able to verify a signature's authenticity.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Index obfuscation</h1>
 <p>When generating a private key, index obfuscation can be enabled or disabled for the lifetime of the private key with <code>XMSS_INDEX_OBFUSCATION_ON</code> and <code>XMSS_INDEX_OBFUSCATION_OFF</code> respectively.</p>
 <p>If a private key is generated with the index obfuscation enabled, all signatures generated with that private key will be generated using an obfuscated index.</p>
 <p>Index obfuscation is implemented with the Fisher-Yates shuffle algorithm.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 When to use index obfuscation</h2>
 <p>It's advised to use index obfuscation only when there is a reason to hide the number of signatures. When making this decision, it should be taken into consideration that index obfuscation cannot be enabled for a private key after the private key has been generated.</p>
 <p>If the number of signatures is considered sensitive information, also consider what information is leaked through the parameter set <code>OID</code> and choose the parametrization accordingly.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Implications of using index obfuscation</h2>
 <p>Enabling index obfuscation has the following implications:</p>
 <ol type="1">
@@ -163,16 +163,16 @@ Implications of using index obfuscation</h2>
 </li>
 <li>Increased processing time to create a signature, as the extra checks are required to ensure that no index re-use can occur in case of bit errors. The performance impact is small compared to the speedup that can be achieved by using a public key cache.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Impact on security</h2>
 <p>This XMSS signing library is designed and implemented to manage indexes securely even in case of an accidental single bit error. Even in the event of a bit flip in RAM, a register, or in a stored private key part, an index should never be re-used, provided that the guidance for using this library is followed.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Impact on back-ups</h2>
 <p>The index obfuscation is implemented in such a way that all index management in the library is done on pre-obfuscated indexes, so there is no impact on back-ups and index space partitioning. Based on the information in a signature, attackers cannot learn which partition was used to sign a message. If multiple partitions are used for load balancing over multiple systems, an attacker cannot determine which system was used to create a signature. Similarly, attackers are unable to determine if a back-up has been taken into operation based on the information in any signature.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Interoperability</h2>
 <p>The use of index obfuscation does not impact verification, so signatures generated with index obfuscation are fully compatible with any other standard-compliant XMSS implementation.</p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Conclusion</h1>
 <p>Index obfuscation allows for hiding:</p>
 <ul>

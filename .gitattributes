@@ -7,15 +7,17 @@
 # Boilerplate
 .gitattributes   text
 .txt             text
-.nojekyll        text
+.md              text
 
-# Documentation
-*.css    text
-*.html   text
-*.js     text
-*.map    text
-*.md5    text
-*.svg    text
+# Documentation (built on Linux)
+docs/.nojekyll   text eol=lf
+docs/**/*.txt    text eol=lf
+docs/**/*.css    text eol=lf
+docs/**/*.html   text eol=lf
+docs/**/*.js     text eol=lf
+docs/**/*.map    text eol=lf
+docs/**/*.md5    text eol=lf
+docs/**/*.svg    text eol=lf
 
 *.png     binary
 *.ttf     binary

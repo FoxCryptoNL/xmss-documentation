@@ -154,51 +154,51 @@ Typedefs</h2></td></tr>
 <tr class="memitem:acd45e49e41f0f0776f668656d8d0b477"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generic__digest_8h.html#acd45e49e41f0f0776f668656d8d0b477">XmssGenericDigestInit</a>) (void)</td></tr>
 <tr class="memdesc:acd45e49e41f0f0776f668656d8d0b477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest initialization function. Returns a context for use by the update and finalize functions. The supplier of the generic digest override has full control over the context; the returned context is treated as opaque by the XMSS library.  <a href="generic__digest_8h.html#acd45e49e41f0f0776f668656d8d0b477">More...</a><br /></td></tr>
 <tr class="separator:acd45e49e41f0f0776f668656d8d0b477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d8842f9a7c8c5f41d0c5ee5af71e76"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generic__digest_8h.html#a79d8842f9a7c8c5f41d0c5ee5af71e76">XmssGenericDigestUpdate</a>) (void *restrict context, const uint8_t *restrict data, size_t data_length)</td></tr>
-<tr class="memdesc:a79d8842f9a7c8c5f41d0c5ee5af71e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest update function. Updates the internal hash state for a single digest calculation with the additional data supplied.  <a href="generic__digest_8h.html#a79d8842f9a7c8c5f41d0c5ee5af71e76">More...</a><br /></td></tr>
-<tr class="separator:a79d8842f9a7c8c5f41d0c5ee5af71e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc416e7271495372ada26300197d51e5"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generic__digest_8h.html#abc416e7271495372ada26300197d51e5">XmssGenericDigestFinalize</a>) (void *restrict context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict digest)</td></tr>
-<tr class="memdesc:abc416e7271495372ada26300197d51e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest finalize function. Outputs the digest and disposes the context.  <a href="generic__digest_8h.html#abc416e7271495372ada26300197d51e5">More...</a><br /></td></tr>
-<tr class="separator:abc416e7271495372ada26300197d51e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dda490fe943bf272daa67e0843f8146"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generic__digest_8h.html#a8dda490fe943bf272daa67e0843f8146">XmssGenericDigestUpdate</a>) (void *context, const uint8_t *data, size_t data_length)</td></tr>
+<tr class="memdesc:a8dda490fe943bf272daa67e0843f8146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest update function. Updates the internal hash state for a single digest calculation with the additional data supplied.  <a href="generic__digest_8h.html#a8dda490fe943bf272daa67e0843f8146">More...</a><br /></td></tr>
+<tr class="separator:a8dda490fe943bf272daa67e0843f8146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2e437e8e105180243e77cd1a807a78"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generic__digest_8h.html#add2e437e8e105180243e77cd1a807a78">XmssGenericDigestFinalize</a>) (void *context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *digest)</td></tr>
+<tr class="memdesc:add2e437e8e105180243e77cd1a807a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic digest finalize function. Outputs the digest and disposes the context.  <a href="generic__digest_8h.html#add2e437e8e105180243e77cd1a807a78">More...</a><br /></td></tr>
+<tr class="separator:add2e437e8e105180243e77cd1a807a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract typedefs for hash function overrides using the generic interface. </p>
-<p>Do not include this file. Instead, either include <code><a class="el" href="override__sha256__generic_8h.html" title="Prototypes for the SHA-256 hash function override using the generic interface.">override_sha256_generic.h</a></code> or <code><a class="el" href="override__shake256__256__generic_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the generic interface.">override_shake256_256_generic.h</a></code>, depending on the specific algorithm you are overriding.</p>
+<p>Do not include this file. Instead, either include <a class="el" href="override__sha256__generic_8h.html" title="Prototypes for the SHA-256 hash function override using the generic interface.">override_sha256_generic.h</a> or <a class="el" href="override__shake256__256__generic_8h.html" title="Prototypes for the SHAKE256/256 hash function override using the generic interface.">override_shake256_256_generic.h</a>, depending on the specific algorithm you are overriding.</p>
 <p>For each digest algorithm (SHA-256 and/or SHAKE256/256), the library allows to override its internal implementation. The main use case is hardware acceleration.</p>
 <p>If your platform is compatible with the internal format of the library, then it is preferred to use the internal interface rather than the generic interface specified here.</p>
 <p>When supplying an override using the generic interface, you will have to implement 3 functions (per algorithm, that you are overriding):</p><ul>
-<li>initialize</li>
-<li>update</li>
-<li>finalize</li>
+<li><a class="el" href="generic__digest_8h.html#acd45e49e41f0f0776f668656d8d0b477" title="Generic digest initialization function. Returns a context for use by the update and finalize function...">XmssGenericDigestInit</a></li>
+<li><a class="el" href="generic__digest_8h.html#a8dda490fe943bf272daa67e0843f8146" title="Generic digest update function. Updates the internal hash state for a single digest calculation with ...">XmssGenericDigestUpdate</a></li>
+<li><a class="el" href="generic__digest_8h.html#add2e437e8e105180243e77cd1a807a78" title="Generic digest finalize function. Outputs the digest and disposes the context.">XmssGenericDigestFinalize</a></li>
 </ul>
 <p>The library guarantees that the functions are called in the following order:</p><ul>
 <li>exactly one call to the initialize function</li>
 <li>0 or more calls to the update function</li>
 <li>exactly one call to the finalize function</li>
 </ul>
-<p>Per thread, there will be at most one digest in use at any one time. This implies that if you use the library single threaded, then you could use a single statically allocated context. In that case the opaque <code>context</code> parameter does not necessarily have to be provided or used (i.e., it could simply be 0).</p>
+<p>Per thread, there will be at most one digest in use at any one time. This implies that if you use the library single threaded, then you could use a single statically allocated context. In that case the opaque <code>context</code> parameter does not necessarily have to be provided or used (i.e., it could simply be NULL).</p>
 <p><b>Error handling</b></p>
 <p>For performance reasons, the functions themselves do not provide a means to return errors. If your digest implementation can fail, then the failing function should store its error in a global (or thread-local) context. This context must then be checked after each library call.</p>
 <p>For example (not using bit error resilient booleans for readability):</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">bool</span> digest_error;</div>
 <div class="line"> </div>
 <div class="line">digest_error = <span class="keyword">false</span>;</div>
-<div class="line"><a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = <a class="code" href="signing_8h.html#afaa8963dc29966db6c06efe849e20f04">xmss_generate_private_key</a>();</div>
+<div class="line"><a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a> result = <a class="code" href="signing_8h.html#a7ca94f25a7db0c94b0c284989c094071">xmss_generate_private_key</a>();</div>
 <div class="line"><span class="keywordflow">if</span> (result != <a class="code" href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a> || digest_error) {</div>
 <div class="line">    <span class="comment">// handle errors</span></div>
 <div class="line">}</div>
-<div class="ttc" id="asigning_8h_html_afaa8963dc29966db6c06efe849e20f04"><div class="ttname"><a href="signing_8h.html#afaa8963dc29966db6c06efe849e20f04">xmss_generate_private_key</a></div><div class="ttdeci">XmssError xmss_generate_private_key(XmssKeyContext **key_context, XmssPrivateKeyStatelessBlob **private_key, XmssPrivateKeyStatefulBlob **key_usage, const XmssBuffer *secure_random, const XmssIndexObfuscationSetting index_obfuscation_setting, const XmssBuffer *random, const XmssSigningContext *context)</div><div class="ttdoc">Generate a new private key.</div></div>
-<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a></div><div class="ttdeci">XmssError</div><div class="ttdoc">The return codes for the functions in the XMSS library.</div><div class="ttdef"><b>Definition:</b> types.h:101</div></div>
-<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a></div><div class="ttdeci">@ XMSS_OKAY</div><div class="ttdoc">Success.</div><div class="ttdef"><b>Definition:</b> types.h:105</div></div>
+<div class="ttc" id="asigning_8h_html_a7ca94f25a7db0c94b0c284989c094071"><div class="ttname"><a href="signing_8h.html#a7ca94f25a7db0c94b0c284989c094071">xmss_generate_private_key</a></div><div class="ttdeci">XmssError xmss_generate_private_key(XmssKeyContext **key_context, XmssPrivateKeyStatelessBlob **private_key, XmssPrivateKeyStatefulBlob **key_usage, const XmssBuffer *secure_random, XmssIndexObfuscationSetting index_obfuscation_setting, const XmssBuffer *random, const XmssSigningContext *context)</div><div class="ttdoc">Generate a new private key.</div></div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8">XmssError</a></div><div class="ttdeci">XmssError</div><div class="ttdoc">The return codes for the functions in the XMSS library.</div><div class="ttdef"><b>Definition:</b> types.h:103</div></div>
+<div class="ttc" id="atypes_8h_html_a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969"><div class="ttname"><a href="types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969">XMSS_OKAY</a></div><div class="ttdeci">@ XMSS_OKAY</div><div class="ttdoc">Success.</div><div class="ttdef"><b>Definition:</b> types.h:114</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="abc416e7271495372ada26300197d51e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc416e7271495372ada26300197d51e5">&#9670;&nbsp;</a></span>XmssGenericDigestFinalize</h2>
+<a id="add2e437e8e105180243e77cd1a807a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add2e437e8e105180243e77cd1a807a78">&#9670;&nbsp;</a></span>XmssGenericDigestFinalize</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* XmssGenericDigestFinalize) (void *restrict context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *restrict digest)</td>
+          <td class="memname">typedef void(* XmssGenericDigestFinalize) (void *context, <a class="el" href="structXmssValue256.html">XmssValue256</a> *digest)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,14 +232,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a79d8842f9a7c8c5f41d0c5ee5af71e76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79d8842f9a7c8c5f41d0c5ee5af71e76">&#9670;&nbsp;</a></span>XmssGenericDigestUpdate</h2>
+<a id="a8dda490fe943bf272daa67e0843f8146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dda490fe943bf272daa67e0843f8146">&#9670;&nbsp;</a></span>XmssGenericDigestUpdate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* XmssGenericDigestUpdate) (void *restrict context, const uint8_t *restrict data, size_t data_length)</td>
+          <td class="memname">typedef void(* XmssGenericDigestUpdate) (void *context, const uint8_t *data, size_t data_length)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -248,8 +248,8 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>An opaque context, i.e., the result of the most recent call to the initialization function on this thread. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The byte stream of additional data to be included in the message; may be NULL if and only if data_length is zero. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data_length</td><td>The number of bytes pointed to by data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The byte stream of additional data to be included in the message; may be NULL if and only if <code>data_length</code> is zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_length</td><td>The number of bytes pointed to by <code>data</code>. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,6 +1,6 @@
 <map id="opaque_structures.h" name="opaque_structures.h">
-<area shape="rect" id="node1" title="Public definitions of opaque structures and memory management calls for those." alt="" coords="27,5,182,32"/>
-<area shape="rect" id="node2" href="$structures_8h.html" title="XMSS library specific structured types." alt="" coords="55,80,154,107"/>
-<area shape="rect" id="node3" href="$signing_8h.html" title="Public API for the XMSS signing library." alt="" coords="5,155,87,181"/>
+<area shape="rect" id="node1" title="Public definitions of opaque structures and memory management calls for those." alt="" coords="43,5,198,32"/>
+<area shape="rect" id="node2" href="$structures_8h.html" title="XMSS library specific structured types." alt="" coords="29,80,127,107"/>
 <area shape="rect" id="node4" href="$verification_8h.html" title="Public API for the XMSS verification library." alt="" coords="111,155,218,181"/>
+<area shape="rect" id="node3" href="$signing_8h.html" title="Public API for the XMSS signing library." alt="" coords="5,155,87,181"/>
 </map>

@@ -125,16 +125,16 @@ $(document).ready(function(){initNavTree('secure-conditional-branches.html','');
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md30">Problem definition</a></li>
-<li class="level1"><a href="#autotoc_md31">Secret data</a></li>
-<li class="level1"><a href="#autotoc_md32">Single branches</a></li>
-<li class="level1"><a href="#autotoc_md33">Signing API</a></li>
-<li class="level1"><a href="#autotoc_md34">Verification API</a></li>
+<ul><li class="level1"><a href="#autotoc_md35">Problem definition</a></li>
+<li class="level1"><a href="#autotoc_md36">Secret data</a></li>
+<li class="level1"><a href="#autotoc_md37">Single branches</a></li>
+<li class="level1"><a href="#autotoc_md38">Signing API</a></li>
+<li class="level1"><a href="#autotoc_md39">Verification API</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_gitlab_runner_builds_Ybiz_PBn_0_crypto_xmss_documentation_build_docs_0110_secure_conditional_branches"></a></p>
 <p>This document provides the rationale for security-related conditional branches.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Problem definition</h1>
 <p>We consider the following problems with conditional branches:</p>
 <ol type="1">
@@ -148,10 +148,10 @@ Problem definition</h1>
 <p class="startli">An attacker may be able to observe the consumed power or the total running time to determine whether or not the branch condition was true or false. If the branching condition was based on secret data, (parts of) the secret data are leaked by such attacks, compromising confidentiality.</p>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Secret data</h1>
 <p>The API never branches on secret data. This is also a PQClean requirement.</p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Single branches</h1>
 <p>Consider the following code:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (!authentication_succeeded)</div>
@@ -174,12 +174,12 @@ Single branches</h1>
 <div class="line"><span class="preprocessor"></span><span class="comment">// actions follow that require authentication</span></div>
 </div><!-- fragment --><p>This requires at least two branch instructions to be skipped, which is a much harder feat to accomplish for an attacker. Furthermore, the branch condition uses bit error resilient values as explained in <a class="el" href="secure-boolean-functions.html">Secure boolean functions</a>.</p>
 <p>It is up to the user of the XMSS library to determine to which degree instruction-skip resilience is required. Note that compilers must be instructed to not optimize away any redundant condition checks.</p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md38"></a>
 Signing API</h1>
 <p>The signing API uses twofold condition redundancy.</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md39"></a>
 Verification API</h1>
-<p>The verification API does not use branching on security conditions at all, as it is optimized for size. Whether or not to sacrifice code size for resilience is up to the user of the library. </p>
+<p>The verification API returns a type of which the defined values have a hamming-distance of 4 (see <a class="el" href="secure-boolean-functions.html">Secure boolean functions</a> for a rationale). It is up to the user to do secure conditional branching on the returned value for the desired level of fault injection resilience. See <a class="el" href="signature-verification.html">Signature verification</a> for guidance on secure usage the verification API for specific usage scenarios and security requirements. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

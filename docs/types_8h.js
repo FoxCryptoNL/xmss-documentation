@@ -35,6 +35,7 @@ var types_8h =
     [ "XmssError", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8", [
       [ "XMSS_OKAY", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a882a80a9d4c9a955df2fb9504e9ff969", null ],
       [ "XMSS_ERR_NULL_POINTER", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a9f393664fc1db7721e05ffd65ad3dcb0", null ],
+      [ "XMSS_ERR_INVALID_SIGNATURE", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a0bdb53e06d8d07be68a7c9eb881e1f3d", null ],
       [ "XMSS_ERR_ARGUMENT_MISMATCH", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a3c298a0dceb2f9fa75f4b9ec71061679", null ],
       [ "XMSS_ERR_ALLOC_ERROR", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a6287b010e35db2e0ea28c0ce9027d839", null ],
       [ "XMSS_ERR_INVALID_BLOB", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a02fdc62d57568f7f140285493af08284", null ],
@@ -45,7 +46,8 @@ var types_8h =
       [ "XMSS_ERR_TOO_FEW_SIGNATURES_AVAILABLE", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a56c34c17a3d3992f3297483a7f2caa90", null ],
       [ "XMSS_ERR_PARTITIONS_NOT_CONSECUTIVE", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a16f1e53b876ddee456d03d5a3a42a58a", null ],
       [ "XMSS_ERR_NO_PUBLIC_KEY", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8aaa65985c41cd11598a8e97c472cc216c", null ],
-      [ "XMSS_ERR_BIT_ERROR_DETECTED", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a86dc4033ba6addab2d0399b36f03f69a", null ]
+      [ "XMSS_ERR_FAULT_DETECTED", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8acc1d8bf6169dcf45863f0373c6e97a91", null ],
+      [ "XMSS_UNINITIALIZED", "types_8h.html#a5c29fa42780309b65c50759b4c7b65f8a83e564a72aeb1c27798572ead21bbbeb", null ]
     ] ],
     [ "XmssIndexObfuscationSetting", "types_8h.html#adb4dd79f0a19cd8169d8c597591ac42c", [
       [ "XMSS_INDEX_OBFUSCATION_OFF", "types_8h.html#adb4dd79f0a19cd8169d8c597591ac42caac9d81203866e988755dbef5b636c358", null ],
@@ -59,6 +61,6 @@ var types_8h =
       [ "XMSS_PARAM_SHAKE256_16_256", "types_8h.html#ae28a452b1a628877fd2fa9eb9502af68a5237c891bb06f953615121eb16b7b219", null ],
       [ "XMSS_PARAM_SHAKE256_20_256", "types_8h.html#ae28a452b1a628877fd2fa9eb9502af68ab88dfb60a12f7139fb58354f366031de", null ]
     ] ],
-    [ "STATIC_ASSERT", "types_8h.html#ae0a582350418a98089979014139ccc20", null ],
-    [ "STATIC_ASSERT", "types_8h.html#aca4bf0b2e86c9c2856d91f064307cfde", null ]
+    [ "XMSS_STATIC_ASSERT", "types_8h.html#a558f0334f6a2db48e407a4e15f5df031", null ],
+    [ "XMSS_STATIC_ASSERT", "types_8h.html#aa4ee55937d5eba17bba746d4acc366ac", null ]
 ];

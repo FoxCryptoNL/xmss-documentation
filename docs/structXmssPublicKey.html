@@ -135,19 +135,19 @@ $(document).ready(function(){initNavTree('structXmssPublicKey.html',''); initRes
 <div class="dynheader">
 Collaboration diagram for XmssPublicKey:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structXmssPublicKey__coll__graph.svg" width="146" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structXmssPublicKey__coll__graph.svg" width="132" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0fe28036373323bdde96d4ab9363afb9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKey.html#a0fe28036373323bdde96d4ab9363afb9">scheme_identifier</a></td></tr>
-<tr class="memdesc:a0fe28036373323bdde96d4ab9363afb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The XmssParameterSetOID with which this public key was generated.  <a href="structXmssPublicKey.html#a0fe28036373323bdde96d4ab9363afb9">More...</a><br /></td></tr>
+<tr class="memdesc:a0fe28036373323bdde96d4ab9363afb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="types_8h.html#ae28a452b1a628877fd2fa9eb9502af68" title="The XMSS parameter sets that are supported by this library.">XmssParameterSetOID</a> with which this public key was generated.  <a href="structXmssPublicKey.html#a0fe28036373323bdde96d4ab9363afb9">More...</a><br /></td></tr>
 <tr class="separator:a0fe28036373323bdde96d4ab9363afb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee99ff5be8b08fabf8c53263cd9af072"><td class="memItemLeft" align="right" valign="top"><a id="aee99ff5be8b08fabf8c53263cd9af072"></a>
-<a class="el" href="structXmssValue256.html">XmssValue256</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKey.html#aee99ff5be8b08fabf8c53263cd9af072">public_key</a></td></tr>
-<tr class="memdesc:aee99ff5be8b08fabf8c53263cd9af072"><td class="mdescLeft">&#160;</td><td class="mdescRight">The public key root. <br /></td></tr>
-<tr class="separator:aee99ff5be8b08fabf8c53263cd9af072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55de9cd64233907d2d4eb0125859605a"><td class="memItemLeft" align="right" valign="top"><a id="a55de9cd64233907d2d4eb0125859605a"></a>
+<a class="el" href="structXmssValue256.html">XmssValue256</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKey.html#a55de9cd64233907d2d4eb0125859605a">root</a></td></tr>
+<tr class="memdesc:a55de9cd64233907d2d4eb0125859605a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The public key root. <br /></td></tr>
+<tr class="separator:a55de9cd64233907d2d4eb0125859605a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc269b2276f9b69c85f8cdacf3a51bc2"><td class="memItemLeft" align="right" valign="top"><a id="adc269b2276f9b69c85f8cdacf3a51bc2"></a>
 <a class="el" href="structXmssValue256.html">XmssValue256</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structXmssPublicKey.html#adc269b2276f9b69c85f8cdacf3a51bc2">seed</a></td></tr>
 <tr class="memdesc:adc269b2276f9b69c85f8cdacf3a51bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The public SEED. <br /></td></tr>
@@ -155,7 +155,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Exportable format for a public key. </p>
-<p>This is a public key in the format described by RFC 8391, Section 4.1.7. </p>
+<p>This is a public key in the format described by RFC 8391, Section 4.1.7. Note that for all parameter sets supported by this library the XMSS security parameter $n = 32$. Therefore, this structure has a fixed size; it will not fit public keys for other values of $n$. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a0fe28036373323bdde96d4ab9363afb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fe28036373323bdde96d4ab9363afb9">&#9670;&nbsp;</a></span>scheme_identifier</h2>
@@ -169,8 +169,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The XmssParameterSetOID with which this public key was generated. </p>
-<p>scheme_identifier must be written in big-endian notation. </p>
+<p>The <a class="el" href="types_8h.html#ae28a452b1a628877fd2fa9eb9502af68" title="The XMSS parameter sets that are supported by this library.">XmssParameterSetOID</a> with which this public key was generated. </p>
+<p><code>scheme_identifier</code> must be written in big-endian notation. </p>
 
 </div>
 </div>
